@@ -1,0 +1,4 @@
+C:\Users\paddy\Downloads\CLion\bin\cmake\win\x64\bin\cmake.exe -DCMAKE_BUILD_TYPE=Debug -DCMAKE_MAKE_PROGRAM=C:/Users/paddy/Downloads/CLion/bin/ninja/win/x64/ninja.exe -G Ninja -S C:\Users\paddy\CLionProjects\3530project3 -B C:\Users\paddy\CLionProjects\3530project3\cmake-build-debug
+-- Configuring done (0.5s)
+-- Generating done (0.0s)
+-- Build files have been written to: C:/Users/paddy/CLionProjects/3530project3/cmake-build-debug
