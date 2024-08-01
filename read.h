@@ -1,12 +1,11 @@
 #ifndef INC_3530PROJECT3_READ_H
 #define INC_3530PROJECT3_READ_H
-#endif //INC_3530PROJECT3_READ_H
 #include <iostream>
 #include <fstream>
 #include <sstream>
 #include <unordered_map>
-#include <utility>
 #include <vector>
+#include <string>
 using namespace std;
 
 struct Estate{
@@ -37,7 +36,7 @@ struct Estate{
 
 };
 
-vector<Estate> read(){
+    vector<Estate> read(){
     vector<Estate>HousingData;
     ifstream file("RandomHousingData.csv"); //this is the .csv file i'm using. each data part is separated by a semicolon.
     //the .csv file will also be added to the github.
@@ -65,3 +64,4 @@ vector<Estate> read(){
     return HousingData;
 }
 
+#endif//INC_3530PROJECT3_READ_H

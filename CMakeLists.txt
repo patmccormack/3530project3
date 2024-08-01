@@ -5,4 +5,5 @@ set(CMAKE_CXX_STANDARD 14)
 
 add_executable(3530project3
         main.cpp
-        read.h)
+        read.h
+        )
