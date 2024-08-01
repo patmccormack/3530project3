@@ -51,7 +51,7 @@ build cmake_object_order_depends_target_3530project3: phony || CMakeFiles/3530pr
 
 build CMakeFiles/3530project3.dir/main.cpp.obj: CXX_COMPILER__3530project3_unscanned_Debug C$:/Users/paddy/CLionProjects/3530project3/main.cpp || cmake_object_order_depends_target_3530project3
   DEP_FILE = CMakeFiles\3530project3.dir\main.cpp.obj.d
-  FLAGS = -g -std=gnu++14 -fdiagnostics-color=always
+  FLAGS = -g -fdiagnostics-color=always
   OBJECT_DIR = CMakeFiles\3530project3.dir
   OBJECT_FILE_DIR = CMakeFiles\3530project3.dir
 
