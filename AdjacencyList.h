@@ -7,6 +7,8 @@
 #include <utility>
 #include <iostream>
 #include <limits>
+#include <queue>
+
 using namespace std;
 
  // adj list - search function and a selection function, highlight based off of relevancy.
@@ -51,6 +53,18 @@ public:
         }
         return neighbors;
     }
+    /*
+    vector<string> getEdges(int node) const {
 
+        queue<int> q;
+        q.push(node);
+        while(!q.empty()){
+            vector<pair<int,double>>  = adjacencyList.find(q.front());
+            q.pop();
+
+            for(int i = 0; i < )
+        }
+
+    }*/
 #endif
 };

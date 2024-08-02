@@ -1,4 +1,22 @@
-C:\Users\paddy\Downloads\CLion\bin\cmake\win\x64\bin\cmake.exe -DCMAKE_BUILD_TYPE=Debug -DCMAKE_MAKE_PROGRAM=C:/Users/paddy/Downloads/CLion/bin/ninja/win/x64/ninja.exe -G Ninja -S C:\Users\paddy\CLionProjects\3530project3 -B C:\Users\paddy\CLionProjects\3530project3\cmake-build-debug
--- Configuring done (0.5s)
--- Generating done (0.0s)
--- Build files have been written to: C:/Users/paddy/CLionProjects/3530project3/cmake-build-debug
+"C:\Program Files\JetBrains\CLion 2024.1.1\bin\cmake\win\x64\bin\cmake.exe" -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - MinGW Makefiles" -S C:\Users\chuya\CLionProjects\3530project3 -B C:\Users\chuya\CLionProjects\3530project3\cmake-build-debug
+CMake Deprecation Warning:
+  Support for "Extra Generators" like
+
+    CodeBlocks
+
+  is deprecated and will be removed from a future version of CMake.  IDEs may
+  use the cmake-file-api(7) to view CMake-generated project build trees.
+
+
+-- Could NOT find JPEG (missing: JPEG_LIBRARY JPEG_INCLUDE_DIR) 
+-- Could NOT find ZLIB (missing: ZLIB_LIBRARY ZLIB_INCLUDE_DIR) 
+-- Could NOT find BLAS (missing: BLAS_LIBRARIES) 
+-- Could NOT find LAPACK (missing: LAPACK_LIBRARIES) 
+    Reason given by package: LAPACK could not be found because dependency BLAS could not be found.
+
+-- Could NOT find BLAS (missing: BLAS_LIBRARIES) 
+-- Could NOT find FFTW (missing: FFTW_INCLUDE_DIRS) 
+Setting matplotplusplus compiler options
+-- Configuring done (0.8s)
+-- Generating done (0.2s)
+-- Build files have been written to: C:/Users/chuya/CLionProjects/3530project3/cmake-build-debug

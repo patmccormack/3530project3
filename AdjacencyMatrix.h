@@ -27,7 +27,7 @@ public:
     }
 
     //edge lookup: shortest edge between data points and user preferences
-    string findShortestEdge(int userNodeIndex, const vector<Estate>& estates) const {
+    std::string findShortestEdge(int userNodeIndex, const vector<Estate>& estates) const {
         double minEdgeWeight = numeric_limits<double>::max();
         int minEdgeIndex = -1;
             for (size_t i = 0; i < numNodes; ++i) {
@@ -47,8 +47,8 @@ public:
     }
     
 
-    vector<string> getNeighbors(int node, const vector<Estate>& estates) const {
-        vector<string> neighbors;
+    std::vector<string> getNeighbors(int node, const vector<Estate>& estates) const {
+        std::vector<string> neighbors;
         for (int i = 0; i < numNodes; ++i) {
             if (matrix[node][i] > 0.0) {
                 neighbors.push_back(estates[i].name);

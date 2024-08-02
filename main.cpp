@@ -1,12 +1,15 @@
 //
 // Created by paddy on 7/28/2024.
 //
+
+#include <matplot/matplot.h>
+
 #include <iostream>
 #include "read.h"
 #include "AdjacencyList.h"
 #include "AdjacencyMatrix.h"
 #include <cmath>
-using namespace std;
+
 
 // similarity between nodes
 double calculateSimilarity(const Estate& estate1, const Estate& estate2) {
@@ -28,6 +31,7 @@ double calculateSimilarity(const Estate& estate1, const Estate& estate2) {
     // similarity score, count create count instead of 4 for more preferences
     return score/4;
     // most similar has score closer to 1
+
 }
 
 // Test
@@ -43,6 +47,7 @@ vector<Estate> TestData() {
 
 Estate getUserTestPreferences() {
     return Estate("User Preferences", 1300, 3, 2, 5.0);
+
 }
 
 
@@ -64,7 +69,7 @@ int main(){
     cout << "Enter your preferred distance from campus (numerical representation): ";
     cin >> userEstate.location;
 
-    */
+
 
     // Test with test data
     vector<Estate> HousingData = TestData();
@@ -89,7 +94,6 @@ int main(){
             matrix.addEdge(userNodeIndex, i, userSimilarityScore);
         }
     }
-
     // egdges between data nodes
     for (size_t i = 0; i < n; ++i) {
         for (size_t j = i + 1; j < n; ++j) {
@@ -100,6 +104,7 @@ int main(){
             }
         }
     }
+
 
 // compare edge lookup: lookup shortest edge between user node
     string shortestEdgeList = list.findShortestEdge(userNodeIndex, HousingData);
@@ -122,6 +127,17 @@ int main(){
     }
     cout << endl;
 
+    auto edges = neighborsList;
+*/
+    using namespace matplot;
+
+    std::vector<std::pair<size_t,size_t>> pair = {{0,1} , {0,2} , {11,12} , {32,32}};
+    title("House Search");
+    matplot::graph(pair,"-.dr")->show_labels(false);
+
+    matplot::show();
+
+    return 0;
 
 }
 
