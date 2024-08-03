@@ -58,7 +58,16 @@ public:
         return neighbors;
     }
 
-
+    void printMatrix(){
+        for(int i = 0; i < numNodes; ++i) {
+            for(int j = 0; j < numNodes; ++j){
+                std::cout << "( " << i << ", " << j << " ): " << matrix[i][j] << std::endl;
+            }
+        }
+    }
+    void clearMatrix(){
+        matrix.clear();
+    }
 };
 
 #endif

@@ -9,13 +9,15 @@
 #include "AdjacencyList.h"
 #include "AdjacencyMatrix.h"
 #include <cmath>
+#include <chrono>
+#include <thread>
+#include <sstream>
+#include <string>
+#include <fstream>
 
-
-// similarity between nodes
 double calculateSimilarity(const Estate& estate1, const Estate& estate2) {
     double score = 0.0;
     // normalize categories to give equal weightage in similarity score
-    
     // Rent: estate - preferred/  preferrred
     double rentDifference = abs(estate1.rent - estate2.rent) / ((estate1.rent + estate2.rent) / 2.0);;
     score += 1.0 - rentDifference;
@@ -29,113 +31,206 @@ double calculateSimilarity(const Estate& estate1, const Estate& estate2) {
     double locationDifference = abs(estate1.location - estate2.location) / ((estate1.location + estate2.location) / 2.0);
     score += 1.0 - locationDifference;
     // similarity score, count create count instead of 4 for more preferences
+
     return score/4;
     // most similar has score closer to 1
-
-}
-
-// Test
-vector<Estate> TestData() {
-    return {
-        Estate("Estate A", 1200, 3, 2, 5.0),
-        Estate("Estate B", 1300, 2, 1, 4.0),
-        Estate("Estate C", 1500, 4, 3, 10.0),
-        Estate("Estate D", 1100, 3, 2, 2.0),
-        Estate("Estate E", 1250, 3, 1, 6.0)
-    };
 }
 
 Estate getUserTestPreferences() {
     return Estate("User Preferences", 1300, 3, 2, 5.0);
+}
 
+std::vector<std::string> split(const std::string& s, char delimiter) {
+    std::vector<std::string> tokens;
+    std::string token;
+    std::istringstream tokenStream(s);
+
+    while (std::getline(tokenStream, token, delimiter)) {
+        tokens.push_back(token);
+    }
+    return tokens;
+}
+
+std::vector<Estate> TestData(int limit) {
+    std::cout << "Loading File..." << endl;
+    std::string filename = "RandomHousingData.csv";
+    std::ifstream file(filename);
+
+    if (!file.is_open()) {
+        std::cerr << "Error opening file: " << filename << std::endl;
+        return {};
+    }
+
+    std::vector<Estate> estates;
+    std::string line;
+
+    // Read and discard the header line
+    std::getline(file, line);
+    int index = 0;
+    while (std::getline(file, line) && index <  limit) {
+        std::vector<std::string> row = split(line, ';');
+        if (row.size() >= 5) {
+            double rent = std::stod(row[1]);
+            int bedrooms = std::stoi(row[2]);
+            int bathrooms = std::stoi(row[3]);
+            double location = std::stod(row[4]);
+            std::string realEstate = row[0];
+            estates.emplace_back(Estate(realEstate,float(rent), bedrooms, bathrooms,float(location)));
+        }
+        index++;
+
+    }
+
+    file.close();
+    std::cout << " File Loaded " << endl;
+    return estates;
 }
 
 
-
 int main(){
-/*
-    // read data 
-    vector<Estate>HousingData = read();
-    size_t n = HousingData.size(); // Number of apartments (will be user input node index)
 
-    // get user preferences as an estate
-    Estate userEstate("User Preferences", 0.0, 0, 0, 0.0);
-    cout << "Enter your maximum preferred rent price: ";
-    cin >> userEstate.rent;
-    cout << "Enter your preferred number of bedrooms: ";
-    cin >> userEstate.bedrooms;
-    cout << "Enter your preferred number of bathrooms: ";
-    cin >> userEstate.bathrooms;
-    cout << "Enter your preferred distance from campus (numerical representation): ";
-    cin >> userEstate.location;
+    bool end = false;
+    int size = 40;
+    std::vector<Estate> HousingData = TestData(size);
+    AdjacencyList HouseList;
+    AdjacencyMatrix HouseMatrix(size);
 
-
-
-    // Test with test data
-    vector<Estate> HousingData = TestData();
-    Estate userEstate = getUserTestPreferences();
-    size_t n = HousingData.size();
-
-    // set threshhold to limit edges to meaningful similarities
     double threshold = 0.7;
-
-    // make empty adj lsit and matrix
-    AdjacencyList list;
-    // size of data + user input (0 to n where n is user input)
-    AdjacencyMatrix matrix(n+ 1);
-
-    const size_t userNodeIndex = n;
-
-    // edges to user node
-    for (size_t i = 0; i < n; ++i) {
-        double userSimilarityScore = calculateSimilarity(HousingData[i], userEstate);
-        if (userSimilarityScore > threshold) {
-            list.addEdge(userNodeIndex, i, userSimilarityScore);
-            matrix.addEdge(userNodeIndex, i, userSimilarityScore);
-        }
-    }
-    // egdges between data nodes
-    for (size_t i = 0; i < n; ++i) {
-        for (size_t j = i + 1; j < n; ++j) {
+    int results_found = 0;
+    //Forms connections around the housing data
+    for (size_t i = 0; i < HousingData.size(); ++i) {
+        for (size_t j = i + 1; j < HousingData.size(); ++j) {
             double similarityScore = calculateSimilarity(HousingData[i], HousingData[j]);
             if (similarityScore > threshold) {
-                list.addEdge(i, j, similarityScore);
-                matrix.addEdge(i, j, similarityScore);
+                HouseList.addEdge(i, j, similarityScore);
+                HouseMatrix.addEdge(i, j, similarityScore);
+                results_found++;
             }
         }
     }
+    std::cout << "Found " << results_found << " from " << HousingData.size() << std::endl;
+    while(!end){
+        std::string input;
+        std::cout << "Menu \n 1. Display Houses in Text \n 2. Display Houses in Graph \n 3. Search House \n 4. Print Reference" << std::endl;
+        std::cin >> input;
+
+        if(input == "1"){
+            std::cout << " 1. Adjacency Map \n 2. Matrix?" << endl;
+            string option;
+            std::cin >> option;
+            if(option == "1"){
+                HouseList.printMap();
+            }
+            else if(option == "2"){
+                HouseMatrix.printMatrix();
+            }
+        }
+        if(input == "2"){
+            std::cout << " 1. Adjacency Map \n 2. Matrix?" << endl;
+            string option;
+            std::cin >> option;
+            std::vector<std::pair<size_t, size_t>> graph;
+            std::vector<double> weights;
+
+            if(option == "1"){
+                unordered_map<int, vector<pair<int, double>>> list = HouseList.adjacencyList;
+
+                for(auto it = list.begin();it != list.end() ;++it){
+                    vector<pair<int,double>> edges = it->second;
+                    for(int i = 0; i < edges.size(); i++){
+                        graph.push_back({it->first,edges[i].first});
+                        weights.push_back(edges[i].second);
+                        std::cout << it->first << "," << edges[i].first << endl;
+                    }
+                }
+                std::cout << "Done" << std::endl;
+                auto f = matplot::figure(false);
+
+                auto g = matplot::graph(graph);
+                double m_weight = matplot::max(weights);
+
+                std::vector<double> line_widths =  matplot::transform(weights, [&](double w) { return 5. * w / m_weight; });
+                g->line_widths(line_widths);
+
+                matplot::show();
+            }
+            if(option == "2"){
+                std::vector<double> x;
+                std::vector<double> y;
+                std::vector<double> c;
+
+                std::vector<vector<double>> m = HouseMatrix.matrix;
+                std::unordered_map<std::string, pair<int,int>> labels;
+                for(int i = 0; i < m.size(); ++i) {
+                    for(int j = 0; j < m[i].size() ; ++j){
+                        x.push_back(i);
+                        y.push_back(j);
+                        c.push_back(m[i][j]);
+
+                        std::cout << "( " << i << ", " << j << " ): " << m[i][j] << std::endl;
+                    }
+                }
+                auto f = matplot::figure(false);
 
 
-// compare edge lookup: lookup shortest edge between user node
-    string shortestEdgeList = list.findShortestEdge(userNodeIndex, HousingData);
-    string shortestEdgeMatrix = matrix.findShortestEdge(userNodeIndex, HousingData);
-    cout << "Best match to user input (Adjacency List): " << shortestEdgeList << endl;
-    cout << "Best match to user input (Adjacency Matrix): " << shortestEdgeMatrix << endl;
+                /*for(auto it = labels.begin(); it != labels.end(); ++it){
+                    matplot::labels()
+                }*/
+                auto l = matplot::scatter(x,y,6,c);
+                l->marker_face(true);
+                matplot::show();
+            }
+        }
+        if(input == "3"){
+            HouseList.clearMap();
+            HouseMatrix.clearMatrix();
 
-// compare neighborhood queiries: find all neighbors of user input (above similarity threshhold)
-    vector<string> neighborsList = list.getNeighbors(userNodeIndex, HousingData);
-    vector<string> neighborsMatrix = matrix.getNeighbors(userNodeIndex, HousingData);
-    cout << "Potential suggestions based on user input (Adjacency List): ";
-    for (string neighbor : neighborsList) {
-        cout << neighbor << " ";
+            Estate userEstate("User Preferences", 0.0, 0, 0, 0.0);
+            cout << "Enter your maximum preferred rent price: ";
+            cin >> userEstate.rent;
+            cout << "Enter your preferred number of bedrooms: ";
+            cin >> userEstate.bedrooms;
+            cout << "Enter your preferred number of bathrooms: ";
+            cin >> userEstate.bathrooms;
+            cout << "Enter your preferred distance from campus (numerical representation): ";
+            cin >> userEstate.location;
+
+            for(size_t i = 0; i < HousingData.size(); ++i) {
+                double userSimilarityScore = calculateSimilarity(HousingData[i], userEstate);
+                if (userSimilarityScore > threshold) {
+                    HouseList.addEdge(0, i, userSimilarityScore);
+                }
+            }
+        }
+        if(input == "4"){
+            std::cout << "Printing Data to File" << std::endl;
+            std::ofstream data("Houses.txt");
+            if (data.is_open())
+            {
+                std::cout << "File opened" << std::endl;
+                for(int i = 0; i < HousingData.size(); i++){
+                    std::string estate = std::to_string(i) + ": " + HousingData[i].name + " \nBedrooms: " +
+                                         std::to_string(HousingData[i].bedrooms) + " \nBathrooms: " +
+                                         std::to_string(HousingData[i].bathrooms) + " \n Distance from campus: " +
+                                         std::to_string(HousingData[i].location) + " \nRent: " +
+                                         std::to_string(HousingData[i].rent) + " \n";
+
+                    data << estate;
+                    std::cout << estate << std::endl;
+
+                }
+                data.flush();
+                data.close();
+            }
+
+
+        }
+        if(input == "0"){
+            end = true;
+        }
     }
-    cout << endl;
-
-    cout << "Potential suggestions based on user input (Adjacency Matrix): ";
-    for (string neighbor : neighborsMatrix) {
-        cout << neighbor << " ";
-    }
-    cout << endl;
-
-    auto edges = neighborsList;
-*/
     using namespace matplot;
 
-    std::vector<std::pair<size_t,size_t>> pair = {{0,1} , {0,2} , {11,12} , {32,32}};
-    title("House Search");
-    matplot::graph(pair,"-.dr")->show_labels(false);
-
-    matplot::show();
 
     return 0;
 

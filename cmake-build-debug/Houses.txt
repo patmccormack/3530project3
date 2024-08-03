@@ -1,0 +1,200 @@
+0: Gislason, O\Reilly and Maggio 
+Bedrooms: 2 
+Bathrooms: 4 
+ Distance from campus: 1.210000 
+Rent: 679.580017 
+1: Jenkins - Howe 
+Bedrooms: 1 
+Bathrooms: 3 
+ Distance from campus: 5.630000 
+Rent: 1796.060059 
+2: Macejkovic LLC 
+Bedrooms: 4 
+Bathrooms: 3 
+ Distance from campus: 9.050000 
+Rent: 2220.139893 
+3: Crona - White 
+Bedrooms: 3 
+Bathrooms: 4 
+ Distance from campus: 1.980000 
+Rent: 1204.989990 
+4: Kulas, Kub and Roberts 
+Bedrooms: 3 
+Bathrooms: 5 
+ Distance from campus: 2.310000 
+Rent: 2196.340088 
+5: Jast and Sons 
+Bedrooms: 1 
+Bathrooms: 3 
+ Distance from campus: 8.480000 
+Rent: 538.020020 
+6: Champlin, Bradtke and Predovic 
+Bedrooms: 3 
+Bathrooms: 2 
+ Distance from campus: 8.550000 
+Rent: 728.119995 
+7: Schmeler, Labadie and Ledner 
+Bedrooms: 3 
+Bathrooms: 3 
+ Distance from campus: 1.970000 
+Rent: 2471.149902 
+8: Bernier, Rempel and Purdy 
+Bedrooms: 2 
+Bathrooms: 3 
+ Distance from campus: 8.610000 
+Rent: 960.229980 
+9: Hamill - Larkin 
+Bedrooms: 1 
+Bathrooms: 2 
+ Distance from campus: 8.900000 
+Rent: 1229.060059 
+10: Wisoky Group 
+Bedrooms: 3 
+Bathrooms: 3 
+ Distance from campus: 9.960000 
+Rent: 535.039978 
+11: Jacobi Group 
+Bedrooms: 4 
+Bathrooms: 4 
+ Distance from campus: 1.260000 
+Rent: 943.340027 
+12: Cremin, Braun and Ratke 
+Bedrooms: 2 
+Bathrooms: 3 
+ Distance from campus: 5.700000 
+Rent: 703.869995 
+13: Bernhard and Sons 
+Bedrooms: 1 
+Bathrooms: 3 
+ Distance from campus: 3.410000 
+Rent: 1938.729980 
+14: Nader - Crona 
+Bedrooms: 3 
+Bathrooms: 4 
+ Distance from campus: 6.550000 
+Rent: 2427.129883 
+15: Cartwright - Toy 
+Bedrooms: 2 
+Bathrooms: 3 
+ Distance from campus: 8.040000 
+Rent: 1001.950012 
+16: Rippin - Dare 
+Bedrooms: 4 
+Bathrooms: 5 
+ Distance from campus: 4.480000 
+Rent: 741.580017 
+17: Stokes - Langosh 
+Bedrooms: 2 
+Bathrooms: 5 
+ Distance from campus: 6.230000 
+Rent: 710.890015 
+18: Funk, Osinski and Hudson 
+Bedrooms: 2 
+Bathrooms: 5 
+ Distance from campus: 1.560000 
+Rent: 925.309998 
+19: Krajcik, Hermann and Johns 
+Bedrooms: 1 
+Bathrooms: 5 
+ Distance from campus: 6.040000 
+Rent: 1880.380005 
+20: Price and Sons 
+Bedrooms: 4 
+Bathrooms: 3 
+ Distance from campus: 7.820000 
+Rent: 1772.329956 
+21: Gleichner, Funk and West 
+Bedrooms: 1 
+Bathrooms: 2 
+ Distance from campus: 3.710000 
+Rent: 886.320007 
+22: Ziemann - Jacobson 
+Bedrooms: 2 
+Bathrooms: 4 
+ Distance from campus: 4.280000 
+Rent: 1968.930054 
+23: Waters - Ziemann 
+Bedrooms: 2 
+Bathrooms: 5 
+ Distance from campus: 7.640000 
+Rent: 1599.989990 
+24: Robel - Turcotte 
+Bedrooms: 3 
+Bathrooms: 4 
+ Distance from campus: 2.150000 
+Rent: 903.059998 
+25: Kovacek, Corwin and Kohler 
+Bedrooms: 4 
+Bathrooms: 5 
+ Distance from campus: 2.960000 
+Rent: 1723.680054 
+26: Bogisich - Ryan 
+Bedrooms: 3 
+Bathrooms: 2 
+ Distance from campus: 1.330000 
+Rent: 2431.870117 
+27: Upton, Pfannerstill and Goldner 
+Bedrooms: 2 
+Bathrooms: 5 
+ Distance from campus: 3.370000 
+Rent: 549.059998 
+28: Hamill - Kohler 
+Bedrooms: 1 
+Bathrooms: 2 
+ Distance from campus: 4.740000 
+Rent: 1666.020020 
+29: Emmerich, Blick and Zieme 
+Bedrooms: 3 
+Bathrooms: 2 
+ Distance from campus: 1.490000 
+Rent: 1101.510010 
+30: Hirthe, McDermott and Kessler 
+Bedrooms: 2 
+Bathrooms: 3 
+ Distance from campus: 7.650000 
+Rent: 1416.689941 
+31: Jacobson - Bradtke 
+Bedrooms: 2 
+Bathrooms: 4 
+ Distance from campus: 3.160000 
+Rent: 1512.689941 
+32: Bechtelar, Klein and Jacobson 
+Bedrooms: 1 
+Bathrooms: 3 
+ Distance from campus: 7.410000 
+Rent: 976.549988 
+33: Halvorson - Quitzon 
+Bedrooms: 3 
+Bathrooms: 4 
+ Distance from campus: 1.670000 
+Rent: 1836.839966 
+34: Parisian Inc 
+Bedrooms: 2 
+Bathrooms: 4 
+ Distance from campus: 5.910000 
+Rent: 725.450012 
+35: Towne Group 
+Bedrooms: 3 
+Bathrooms: 5 
+ Distance from campus: 4.620000 
+Rent: 1496.790039 
+36: Sanford, Dibbert and Kling 
+Bedrooms: 3 
+Bathrooms: 3 
+ Distance from campus: 4.730000 
+Rent: 1696.709961 
+37: Beahan - Muller 
+Bedrooms: 3 
+Bathrooms: 2 
+ Distance from campus: 9.760000 
+Rent: 1007.739990 
+38: Christiansen, Cassin and Maggio 
+Bedrooms: 3 
+Bathrooms: 2 
+ Distance from campus: 6.110000 
+Rent: 2459.790039 
+39: Breitenberg - Weber 
+Bedrooms: 3 
+Bathrooms: 3 
+ Distance from campus: 3.090000 
+Rent: 2462.020020 
