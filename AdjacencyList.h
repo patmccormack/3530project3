@@ -24,23 +24,33 @@ public:
         adjacencyList[to].emplace_back(from, weight);
     }
 
-// edge lookup: shortest edge between data points and user preferences
-    std::string findShortestEdge(int userNodeIndex, const vector<Estate>& estates) const {
-        double minEdgeWeight = numeric_limits<double>::max();
-        int minEdgeIndex = -1;
+// edge lookup: longest edge between data points and user preferences = most similar
+    std::vector <std::string>  findLongestEdge(int userNodeIndex, const vector<Estate>& estates) const {
+        double maxEdgeWeight = -1.0;
+        std::vector<int> maxEdgeIndices;
         if (adjacencyList.find(userNodeIndex) != adjacencyList.end()) {
             for (const auto &edge: adjacencyList.at(userNodeIndex)) {
-                if (edge.second < minEdgeWeight) {
-                    minEdgeWeight = edge.second;
-                    minEdgeIndex = edge.first;
+                if (edge.second > maxEdgeWeight) {
+                    maxEdgeWeight = edge.second;
+                    maxEdgeIndices.clear();
+                    maxEdgeIndices.push_back(edge.first);
+
+
+                }else if (edge.second == maxEdgeWeight) {
+                maxEdgeIndices.push_back(edge.first);
                 }
             }
         }
-        if (minEdgeIndex != -1) {
-            return estates[minEdgeIndex].name;
+    
+        std::vector<std::string> results;
+        if (!maxEdgeIndices.empty()) {
+            for (int index : maxEdgeIndices) {
+            results.push_back(estates[index].name);
+            }
         } else {
-            return "No match found";
+            results.push_back("No match found");
         }
+        return results;
     }
 // get neighbors by name
 
