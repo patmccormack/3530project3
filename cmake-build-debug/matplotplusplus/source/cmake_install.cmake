@@ -1,4 +1,4 @@
-# Install script for directory: C:/Users/chuya/CLionProjects/3530project3/matplotplusplus/source
+# Install script for directory: C:/Users/paddy/CLionProjects/3530project3/matplotplusplus/source
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -34,16 +34,16 @@ endif()
 
 # Set default install directory permissions.
 if(NOT DEFINED CMAKE_OBJDUMP)
-  set(CMAKE_OBJDUMP "C:/Program Files/JetBrains/CLion 2024.1.1/bin/mingw/bin/objdump.exe")
+  set(CMAKE_OBJDUMP "C:/mingw64/bin/objdump.exe")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("C:/Users/chuya/CLionProjects/3530project3/cmake-build-debug/matplotplusplus/source/3rd_party/cmake_install.cmake")
+  include("C:/Users/paddy/CLionProjects/3530project3/cmake-build-debug/matplotplusplus/source/3rd_party/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("C:/Users/chuya/CLionProjects/3530project3/cmake-build-debug/matplotplusplus/source/matplot/cmake_install.cmake")
+  include("C:/Users/paddy/CLionProjects/3530project3/cmake-build-debug/matplotplusplus/source/matplot/cmake_install.cmake")
 endif()
 

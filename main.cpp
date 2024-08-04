@@ -3,7 +3,6 @@
 //
 
 #include <matplot/matplot.h>
-
 #include <iostream>
 #include "read.h"
 #include "AdjacencyList.h"
@@ -96,10 +95,10 @@ int main(){
     AdjacencyList HouseList;
     AdjacencyMatrix HouseMatrix(size);
 
-    double threshold = 0.7;
+    double threshold = 0.8;
     int results_found = 0;
     //Forms connections around the housing data
-    for (size_t i = 0; i < HousingData.size(); ++i) {
+    for (size_t i = 0; i < HousingData.size(); ++i) { // O(n^2) (n is number of datapoints)
         for (size_t j = i + 1; j < HousingData.size(); ++j) {
             double similarityScore = calculateSimilarity(HousingData[i], HousingData[j]);
             if (similarityScore > threshold) {
@@ -112,7 +111,7 @@ int main(){
     std::cout << "Found " << results_found << " from " << HousingData.size() << std::endl;
     while(!end){
         std::string input;
-        std::cout << "Menu \n 1. Display Houses in Text \n 2. Display Houses in Graph \n 3. Search House \n 4. Print Reference" << std::endl;
+        std::cout << "Menu \n 0. Exit \n 1. Display Houses in Text \n 2. Display Houses in Graph \n 3. Search House \n 4. Print Reference" << std::endl;
         std::cin >> input;
 
         if(input == "1"){
@@ -136,7 +135,7 @@ int main(){
             if(option == "1"){
                 unordered_map<int, vector<pair<int, double>>> list = HouseList.adjacencyList;
 
-                for(auto it = list.begin();it != list.end() ;++it){
+                for(auto it = list.begin();it != list.end() ;++it){//
                     vector<pair<int,double>> edges = it->second;
                     for(int i = 0; i < edges.size(); i++){
                         graph.push_back({it->first,edges[i].first});
@@ -162,7 +161,7 @@ int main(){
 
                 std::vector<vector<double>> m = HouseMatrix.matrix;
                 std::unordered_map<std::string, pair<int,int>> labels;
-                for(int i = 0; i < m.size(); ++i) {
+                for(int i = 0; i < m.size(); ++i) { // O(n^2) (n is number of data points)
                     for(int j = 0; j < m[i].size() ; ++j){
                         x.push_back(i);
                         y.push_back(j);
@@ -187,7 +186,7 @@ int main(){
             HouseMatrix.clearMatrix();
 
             Estate userEstate("User Preferences", 0.0, 0, 0, 0.0);
-            cout << "Enter your maximum preferred rent price: ";
+            cout << "Enter your preferred rent price: ";
             cin >> userEstate.rent;
             cout << "Enter your preferred number of bedrooms: ";
             cin >> userEstate.bedrooms;
@@ -200,6 +199,11 @@ int main(){
                 double userSimilarityScore = calculateSimilarity(HousingData[i], userEstate);
                 if (userSimilarityScore > threshold) {
                     HouseList.addEdge(0, i, userSimilarityScore);
+                    std::cout << std::to_string(i) + ": " + HousingData[i].name + " \nBedrooms: " +
+                                 std::to_string(HousingData[i].bedrooms) + " \nBathrooms: " +
+                                 std::to_string(HousingData[i].bathrooms) + " \n Distance from campus: " +
+                                 std::to_string(HousingData[i].location) + " \nRent: " +
+                                 std::to_string(HousingData[i].rent) + " \n \n";
                 }
             }
         }
@@ -223,18 +227,17 @@ int main(){
                 data.flush();
                 data.close();
             }
-
+            using namespace matplot;
 
         }
         if(input == "0"){
             end = true;
         }
     }
-    using namespace matplot;
+
 
 
     return 0;
-
 }
 
 /*

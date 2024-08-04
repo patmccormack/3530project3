@@ -47,13 +47,17 @@ cmake_ninja_workdir = C$:/Users/paddy/CLionProjects/3530project3/cmake-build-deb
 #############################################
 # Order-only phony target for 3530project3
 
-build cmake_object_order_depends_target_3530project3: phony || CMakeFiles/3530project3.dir
+build cmake_object_order_depends_target_3530project3: phony || cmake_object_order_depends_target_matplot cmake_object_order_depends_target_nodesoup
 
 build CMakeFiles/3530project3.dir/main.cpp.obj: CXX_COMPILER__3530project3_unscanned_Debug C$:/Users/paddy/CLionProjects/3530project3/main.cpp || cmake_object_order_depends_target_3530project3
+  DEFINES = -DMATPLOT_BUILD_HIGH_RESOLUTION_WORLD_MAP -DNOMINMAX
   DEP_FILE = CMakeFiles\3530project3.dir\main.cpp.obj.d
   FLAGS = -g -fdiagnostics-color=always
+  INCLUDES = -IC:/Users/paddy/CLionProjects/3530project3/matplotplusplus/source -IC:/Users/paddy/CLionProjects/3530project3/cmake-build-debug/matplotplusplus/source/matplot
   OBJECT_DIR = CMakeFiles\3530project3.dir
   OBJECT_FILE_DIR = CMakeFiles\3530project3.dir
+  TARGET_COMPILE_PDB = CMakeFiles\3530project3.dir\
+  TARGET_PDB = 3530project3.pdb
 
 
 # =============================================================================
@@ -63,15 +67,16 @@ build CMakeFiles/3530project3.dir/main.cpp.obj: CXX_COMPILER__3530project3_unsca
 #############################################
 # Link the executable 3530project3.exe
 
-build 3530project3.exe: CXX_EXECUTABLE_LINKER__3530project3_Debug CMakeFiles/3530project3.dir/main.cpp.obj
+build 3530project3.exe: CXX_EXECUTABLE_LINKER__3530project3_Debug CMakeFiles/3530project3.dir/main.cpp.obj | matplotplusplus/source/matplot/libmatplot.a matplotplusplus/source/3rd_party/libnodesoup.a || matplotplusplus/source/3rd_party/libnodesoup.a matplotplusplus/source/matplot/libmatplot.a
   FLAGS = -g
-  LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
+  LINK_LIBRARIES = matplotplusplus/source/matplot/libmatplot.a  -lgdi32  matplotplusplus/source/3rd_party/libnodesoup.a  -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\3530project3.dir
   POST_BUILD = cd .
   PRE_LINK = cd .
+  TARGET_COMPILE_PDB = CMakeFiles\3530project3.dir\
   TARGET_FILE = 3530project3.exe
   TARGET_IMPLIB = lib3530project3.dll.a
-  TARGET_PDB = 3530project3.exe.dbg
+  TARGET_PDB = 3530project3.pdb
 
 
 #############################################
@@ -96,10 +101,812 @@ build CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
 
 build rebuild_cache: phony CMakeFiles/rebuild_cache.util
 
+
+#############################################
+# Utility command for list_install_components
+
+build list_install_components: phony
+
+
+#############################################
+# Utility command for install
+
+build CMakeFiles/install.util: CUSTOM_COMMAND all
+  COMMAND = cmd.exe /C "cd /D C:\Users\paddy\CLionProjects\3530project3\cmake-build-debug && C:\Users\paddy\Downloads\CLion\bin\cmake\win\x64\bin\cmake.exe -P cmake_install.cmake"
+  DESC = Install the project...
+  pool = console
+  restat = 1
+
+build install: phony CMakeFiles/install.util
+
+
+#############################################
+# Utility command for install/local
+
+build CMakeFiles/install/local.util: CUSTOM_COMMAND all
+  COMMAND = cmd.exe /C "cd /D C:\Users\paddy\CLionProjects\3530project3\cmake-build-debug && C:\Users\paddy\Downloads\CLion\bin\cmake\win\x64\bin\cmake.exe -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake"
+  DESC = Installing only the local directory...
+  pool = console
+  restat = 1
+
+build install/local: phony CMakeFiles/install/local.util
+
+
+#############################################
+# Utility command for install/strip
+
+build CMakeFiles/install/strip.util: CUSTOM_COMMAND all
+  COMMAND = cmd.exe /C "cd /D C:\Users\paddy\CLionProjects\3530project3\cmake-build-debug && C:\Users\paddy\Downloads\CLion\bin\cmake\win\x64\bin\cmake.exe -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake"
+  DESC = Installing the project stripped...
+  pool = console
+  restat = 1
+
+build install/strip: phony CMakeFiles/install/strip.util
+
+# =============================================================================
+# Write statements declared in CMakeLists.txt:
+# C:/Users/paddy/CLionProjects/3530project3/CMakeLists.txt
+# =============================================================================
+
+
+#############################################
+# Utility command for edit_cache
+
+build matplotplusplus/CMakeFiles/edit_cache.util: CUSTOM_COMMAND
+  COMMAND = cmd.exe /C "cd /D C:\Users\paddy\CLionProjects\3530project3\cmake-build-debug\matplotplusplus && C:\Users\paddy\Downloads\CLion\bin\cmake\win\x64\bin\cmake.exe -E echo "No interactive CMake dialog available.""
+  DESC = No interactive CMake dialog available...
+  restat = 1
+
+build matplotplusplus/edit_cache: phony matplotplusplus/CMakeFiles/edit_cache.util
+
+
+#############################################
+# Utility command for rebuild_cache
+
+build matplotplusplus/CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
+  COMMAND = cmd.exe /C "cd /D C:\Users\paddy\CLionProjects\3530project3\cmake-build-debug\matplotplusplus && C:\Users\paddy\Downloads\CLion\bin\cmake\win\x64\bin\cmake.exe --regenerate-during-build -SC:\Users\paddy\CLionProjects\3530project3 -BC:\Users\paddy\CLionProjects\3530project3\cmake-build-debug"
+  DESC = Running CMake to regenerate build system...
+  pool = console
+  restat = 1
+
+build matplotplusplus/rebuild_cache: phony matplotplusplus/CMakeFiles/rebuild_cache.util
+
+
+#############################################
+# Utility command for list_install_components
+
+build matplotplusplus/list_install_components: phony
+
+
+#############################################
+# Utility command for install
+
+build matplotplusplus/CMakeFiles/install.util: CUSTOM_COMMAND matplotplusplus/all
+  COMMAND = cmd.exe /C "cd /D C:\Users\paddy\CLionProjects\3530project3\cmake-build-debug\matplotplusplus && C:\Users\paddy\Downloads\CLion\bin\cmake\win\x64\bin\cmake.exe -P cmake_install.cmake"
+  DESC = Install the project...
+  pool = console
+  restat = 1
+
+build matplotplusplus/install: phony matplotplusplus/CMakeFiles/install.util
+
+
+#############################################
+# Utility command for install/local
+
+build matplotplusplus/CMakeFiles/install/local.util: CUSTOM_COMMAND matplotplusplus/all
+  COMMAND = cmd.exe /C "cd /D C:\Users\paddy\CLionProjects\3530project3\cmake-build-debug\matplotplusplus && C:\Users\paddy\Downloads\CLion\bin\cmake\win\x64\bin\cmake.exe -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake"
+  DESC = Installing only the local directory...
+  pool = console
+  restat = 1
+
+build matplotplusplus/install/local: phony matplotplusplus/CMakeFiles/install/local.util
+
+
+#############################################
+# Utility command for install/strip
+
+build matplotplusplus/CMakeFiles/install/strip.util: CUSTOM_COMMAND matplotplusplus/all
+  COMMAND = cmd.exe /C "cd /D C:\Users\paddy\CLionProjects\3530project3\cmake-build-debug\matplotplusplus && C:\Users\paddy\Downloads\CLion\bin\cmake\win\x64\bin\cmake.exe -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake"
+  DESC = Installing the project stripped...
+  pool = console
+  restat = 1
+
+build matplotplusplus/install/strip: phony matplotplusplus/CMakeFiles/install/strip.util
+
+# =============================================================================
+# Write statements declared in CMakeLists.txt:
+# C:/Users/paddy/CLionProjects/3530project3/matplotplusplus/CMakeLists.txt
+# =============================================================================
+
+
+#############################################
+# Utility command for edit_cache
+
+build matplotplusplus/source/CMakeFiles/edit_cache.util: CUSTOM_COMMAND
+  COMMAND = cmd.exe /C "cd /D C:\Users\paddy\CLionProjects\3530project3\cmake-build-debug\matplotplusplus\source && C:\Users\paddy\Downloads\CLion\bin\cmake\win\x64\bin\cmake.exe -E echo "No interactive CMake dialog available.""
+  DESC = No interactive CMake dialog available...
+  restat = 1
+
+build matplotplusplus/source/edit_cache: phony matplotplusplus/source/CMakeFiles/edit_cache.util
+
+
+#############################################
+# Utility command for rebuild_cache
+
+build matplotplusplus/source/CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
+  COMMAND = cmd.exe /C "cd /D C:\Users\paddy\CLionProjects\3530project3\cmake-build-debug\matplotplusplus\source && C:\Users\paddy\Downloads\CLion\bin\cmake\win\x64\bin\cmake.exe --regenerate-during-build -SC:\Users\paddy\CLionProjects\3530project3 -BC:\Users\paddy\CLionProjects\3530project3\cmake-build-debug"
+  DESC = Running CMake to regenerate build system...
+  pool = console
+  restat = 1
+
+build matplotplusplus/source/rebuild_cache: phony matplotplusplus/source/CMakeFiles/rebuild_cache.util
+
+
+#############################################
+# Utility command for list_install_components
+
+build matplotplusplus/source/list_install_components: phony
+
+
+#############################################
+# Utility command for install
+
+build matplotplusplus/source/CMakeFiles/install.util: CUSTOM_COMMAND matplotplusplus/source/all
+  COMMAND = cmd.exe /C "cd /D C:\Users\paddy\CLionProjects\3530project3\cmake-build-debug\matplotplusplus\source && C:\Users\paddy\Downloads\CLion\bin\cmake\win\x64\bin\cmake.exe -P cmake_install.cmake"
+  DESC = Install the project...
+  pool = console
+  restat = 1
+
+build matplotplusplus/source/install: phony matplotplusplus/source/CMakeFiles/install.util
+
+
+#############################################
+# Utility command for install/local
+
+build matplotplusplus/source/CMakeFiles/install/local.util: CUSTOM_COMMAND matplotplusplus/source/all
+  COMMAND = cmd.exe /C "cd /D C:\Users\paddy\CLionProjects\3530project3\cmake-build-debug\matplotplusplus\source && C:\Users\paddy\Downloads\CLion\bin\cmake\win\x64\bin\cmake.exe -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake"
+  DESC = Installing only the local directory...
+  pool = console
+  restat = 1
+
+build matplotplusplus/source/install/local: phony matplotplusplus/source/CMakeFiles/install/local.util
+
+
+#############################################
+# Utility command for install/strip
+
+build matplotplusplus/source/CMakeFiles/install/strip.util: CUSTOM_COMMAND matplotplusplus/source/all
+  COMMAND = cmd.exe /C "cd /D C:\Users\paddy\CLionProjects\3530project3\cmake-build-debug\matplotplusplus\source && C:\Users\paddy\Downloads\CLion\bin\cmake\win\x64\bin\cmake.exe -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake"
+  DESC = Installing the project stripped...
+  pool = console
+  restat = 1
+
+build matplotplusplus/source/install/strip: phony matplotplusplus/source/CMakeFiles/install/strip.util
+
+# =============================================================================
+# Write statements declared in CMakeLists.txt:
+# C:/Users/paddy/CLionProjects/3530project3/matplotplusplus/source/CMakeLists.txt
+# =============================================================================
+
+# =============================================================================
+# Object build statements for STATIC_LIBRARY target nodesoup
+
+
+#############################################
+# Order-only phony target for nodesoup
+
+build cmake_object_order_depends_target_nodesoup: phony || matplotplusplus/source/3rd_party/CMakeFiles/nodesoup.dir
+
+build matplotplusplus/source/3rd_party/CMakeFiles/nodesoup.dir/nodesoup/src/algebra.cpp.obj: CXX_COMPILER__nodesoup_unscanned_Debug C$:/Users/paddy/CLionProjects/3530project3/matplotplusplus/source/3rd_party/nodesoup/src/algebra.cpp || cmake_object_order_depends_target_nodesoup
+  DEFINES = -D_USE_MATH_DEFINES
+  DEP_FILE = matplotplusplus\source\3rd_party\CMakeFiles\nodesoup.dir\nodesoup\src\algebra.cpp.obj.d
+  FLAGS = -g -std=gnu++17 -fvisibility=hidden -fdiagnostics-color=always
+  INCLUDES = -IC:/Users/paddy/CLionProjects/3530project3/matplotplusplus/source/3rd_party/nodesoup/include
+  OBJECT_DIR = matplotplusplus\source\3rd_party\CMakeFiles\nodesoup.dir
+  OBJECT_FILE_DIR = matplotplusplus\source\3rd_party\CMakeFiles\nodesoup.dir\nodesoup\src
+  TARGET_COMPILE_PDB = matplotplusplus\source\3rd_party\CMakeFiles\nodesoup.dir\nodesoup.pdb
+  TARGET_PDB = matplotplusplus\source\3rd_party\libnodesoup.pdb
+
+build matplotplusplus/source/3rd_party/CMakeFiles/nodesoup.dir/nodesoup/src/fruchterman_reingold.cpp.obj: CXX_COMPILER__nodesoup_unscanned_Debug C$:/Users/paddy/CLionProjects/3530project3/matplotplusplus/source/3rd_party/nodesoup/src/fruchterman_reingold.cpp || cmake_object_order_depends_target_nodesoup
+  DEFINES = -D_USE_MATH_DEFINES
+  DEP_FILE = matplotplusplus\source\3rd_party\CMakeFiles\nodesoup.dir\nodesoup\src\fruchterman_reingold.cpp.obj.d
+  FLAGS = -g -std=gnu++17 -fvisibility=hidden -fdiagnostics-color=always
+  INCLUDES = -IC:/Users/paddy/CLionProjects/3530project3/matplotplusplus/source/3rd_party/nodesoup/include
+  OBJECT_DIR = matplotplusplus\source\3rd_party\CMakeFiles\nodesoup.dir
+  OBJECT_FILE_DIR = matplotplusplus\source\3rd_party\CMakeFiles\nodesoup.dir\nodesoup\src
+  TARGET_COMPILE_PDB = matplotplusplus\source\3rd_party\CMakeFiles\nodesoup.dir\nodesoup.pdb
+  TARGET_PDB = matplotplusplus\source\3rd_party\libnodesoup.pdb
+
+build matplotplusplus/source/3rd_party/CMakeFiles/nodesoup.dir/nodesoup/src/kamada_kawai.cpp.obj: CXX_COMPILER__nodesoup_unscanned_Debug C$:/Users/paddy/CLionProjects/3530project3/matplotplusplus/source/3rd_party/nodesoup/src/kamada_kawai.cpp || cmake_object_order_depends_target_nodesoup
+  DEFINES = -D_USE_MATH_DEFINES
+  DEP_FILE = matplotplusplus\source\3rd_party\CMakeFiles\nodesoup.dir\nodesoup\src\kamada_kawai.cpp.obj.d
+  FLAGS = -g -std=gnu++17 -fvisibility=hidden -fdiagnostics-color=always
+  INCLUDES = -IC:/Users/paddy/CLionProjects/3530project3/matplotplusplus/source/3rd_party/nodesoup/include
+  OBJECT_DIR = matplotplusplus\source\3rd_party\CMakeFiles\nodesoup.dir
+  OBJECT_FILE_DIR = matplotplusplus\source\3rd_party\CMakeFiles\nodesoup.dir\nodesoup\src
+  TARGET_COMPILE_PDB = matplotplusplus\source\3rd_party\CMakeFiles\nodesoup.dir\nodesoup.pdb
+  TARGET_PDB = matplotplusplus\source\3rd_party\libnodesoup.pdb
+
+build matplotplusplus/source/3rd_party/CMakeFiles/nodesoup.dir/nodesoup/src/layout.cpp.obj: CXX_COMPILER__nodesoup_unscanned_Debug C$:/Users/paddy/CLionProjects/3530project3/matplotplusplus/source/3rd_party/nodesoup/src/layout.cpp || cmake_object_order_depends_target_nodesoup
+  DEFINES = -D_USE_MATH_DEFINES
+  DEP_FILE = matplotplusplus\source\3rd_party\CMakeFiles\nodesoup.dir\nodesoup\src\layout.cpp.obj.d
+  FLAGS = -g -std=gnu++17 -fvisibility=hidden -fdiagnostics-color=always
+  INCLUDES = -IC:/Users/paddy/CLionProjects/3530project3/matplotplusplus/source/3rd_party/nodesoup/include
+  OBJECT_DIR = matplotplusplus\source\3rd_party\CMakeFiles\nodesoup.dir
+  OBJECT_FILE_DIR = matplotplusplus\source\3rd_party\CMakeFiles\nodesoup.dir\nodesoup\src
+  TARGET_COMPILE_PDB = matplotplusplus\source\3rd_party\CMakeFiles\nodesoup.dir\nodesoup.pdb
+  TARGET_PDB = matplotplusplus\source\3rd_party\libnodesoup.pdb
+
+build matplotplusplus/source/3rd_party/CMakeFiles/nodesoup.dir/nodesoup/src/nodesoup.cpp.obj: CXX_COMPILER__nodesoup_unscanned_Debug C$:/Users/paddy/CLionProjects/3530project3/matplotplusplus/source/3rd_party/nodesoup/src/nodesoup.cpp || cmake_object_order_depends_target_nodesoup
+  DEFINES = -D_USE_MATH_DEFINES
+  DEP_FILE = matplotplusplus\source\3rd_party\CMakeFiles\nodesoup.dir\nodesoup\src\nodesoup.cpp.obj.d
+  FLAGS = -g -std=gnu++17 -fvisibility=hidden -fdiagnostics-color=always
+  INCLUDES = -IC:/Users/paddy/CLionProjects/3530project3/matplotplusplus/source/3rd_party/nodesoup/include
+  OBJECT_DIR = matplotplusplus\source\3rd_party\CMakeFiles\nodesoup.dir
+  OBJECT_FILE_DIR = matplotplusplus\source\3rd_party\CMakeFiles\nodesoup.dir\nodesoup\src
+  TARGET_COMPILE_PDB = matplotplusplus\source\3rd_party\CMakeFiles\nodesoup.dir\nodesoup.pdb
+  TARGET_PDB = matplotplusplus\source\3rd_party\libnodesoup.pdb
+
+
+# =============================================================================
+# Link build statements for STATIC_LIBRARY target nodesoup
+
+
+#############################################
+# Link the static library matplotplusplus\source\3rd_party\libnodesoup.a
+
+build matplotplusplus/source/3rd_party/libnodesoup.a: CXX_STATIC_LIBRARY_LINKER__nodesoup_Debug matplotplusplus/source/3rd_party/CMakeFiles/nodesoup.dir/nodesoup/src/algebra.cpp.obj matplotplusplus/source/3rd_party/CMakeFiles/nodesoup.dir/nodesoup/src/fruchterman_reingold.cpp.obj matplotplusplus/source/3rd_party/CMakeFiles/nodesoup.dir/nodesoup/src/kamada_kawai.cpp.obj matplotplusplus/source/3rd_party/CMakeFiles/nodesoup.dir/nodesoup/src/layout.cpp.obj matplotplusplus/source/3rd_party/CMakeFiles/nodesoup.dir/nodesoup/src/nodesoup.cpp.obj
+  LANGUAGE_COMPILE_FLAGS = -g
+  OBJECT_DIR = matplotplusplus\source\3rd_party\CMakeFiles\nodesoup.dir
+  POST_BUILD = cd .
+  PRE_LINK = cd .
+  TARGET_COMPILE_PDB = matplotplusplus\source\3rd_party\CMakeFiles\nodesoup.dir\nodesoup.pdb
+  TARGET_FILE = matplotplusplus\source\3rd_party\libnodesoup.a
+  TARGET_PDB = matplotplusplus\source\3rd_party\libnodesoup.pdb
+
+
+#############################################
+# Utility command for edit_cache
+
+build matplotplusplus/source/3rd_party/CMakeFiles/edit_cache.util: CUSTOM_COMMAND
+  COMMAND = cmd.exe /C "cd /D C:\Users\paddy\CLionProjects\3530project3\cmake-build-debug\matplotplusplus\source\3rd_party && C:\Users\paddy\Downloads\CLion\bin\cmake\win\x64\bin\cmake.exe -E echo "No interactive CMake dialog available.""
+  DESC = No interactive CMake dialog available...
+  restat = 1
+
+build matplotplusplus/source/3rd_party/edit_cache: phony matplotplusplus/source/3rd_party/CMakeFiles/edit_cache.util
+
+
+#############################################
+# Utility command for rebuild_cache
+
+build matplotplusplus/source/3rd_party/CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
+  COMMAND = cmd.exe /C "cd /D C:\Users\paddy\CLionProjects\3530project3\cmake-build-debug\matplotplusplus\source\3rd_party && C:\Users\paddy\Downloads\CLion\bin\cmake\win\x64\bin\cmake.exe --regenerate-during-build -SC:\Users\paddy\CLionProjects\3530project3 -BC:\Users\paddy\CLionProjects\3530project3\cmake-build-debug"
+  DESC = Running CMake to regenerate build system...
+  pool = console
+  restat = 1
+
+build matplotplusplus/source/3rd_party/rebuild_cache: phony matplotplusplus/source/3rd_party/CMakeFiles/rebuild_cache.util
+
+
+#############################################
+# Utility command for list_install_components
+
+build matplotplusplus/source/3rd_party/list_install_components: phony
+
+
+#############################################
+# Utility command for install
+
+build matplotplusplus/source/3rd_party/CMakeFiles/install.util: CUSTOM_COMMAND matplotplusplus/source/3rd_party/all
+  COMMAND = cmd.exe /C "cd /D C:\Users\paddy\CLionProjects\3530project3\cmake-build-debug\matplotplusplus\source\3rd_party && C:\Users\paddy\Downloads\CLion\bin\cmake\win\x64\bin\cmake.exe -P cmake_install.cmake"
+  DESC = Install the project...
+  pool = console
+  restat = 1
+
+build matplotplusplus/source/3rd_party/install: phony matplotplusplus/source/3rd_party/CMakeFiles/install.util
+
+
+#############################################
+# Utility command for install/local
+
+build matplotplusplus/source/3rd_party/CMakeFiles/install/local.util: CUSTOM_COMMAND matplotplusplus/source/3rd_party/all
+  COMMAND = cmd.exe /C "cd /D C:\Users\paddy\CLionProjects\3530project3\cmake-build-debug\matplotplusplus\source\3rd_party && C:\Users\paddy\Downloads\CLion\bin\cmake\win\x64\bin\cmake.exe -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake"
+  DESC = Installing only the local directory...
+  pool = console
+  restat = 1
+
+build matplotplusplus/source/3rd_party/install/local: phony matplotplusplus/source/3rd_party/CMakeFiles/install/local.util
+
+
+#############################################
+# Utility command for install/strip
+
+build matplotplusplus/source/3rd_party/CMakeFiles/install/strip.util: CUSTOM_COMMAND matplotplusplus/source/3rd_party/all
+  COMMAND = cmd.exe /C "cd /D C:\Users\paddy\CLionProjects\3530project3\cmake-build-debug\matplotplusplus\source\3rd_party && C:\Users\paddy\Downloads\CLion\bin\cmake\win\x64\bin\cmake.exe -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake"
+  DESC = Installing the project stripped...
+  pool = console
+  restat = 1
+
+build matplotplusplus/source/3rd_party/install/strip: phony matplotplusplus/source/3rd_party/CMakeFiles/install/strip.util
+
+# =============================================================================
+# Write statements declared in CMakeLists.txt:
+# C:/Users/paddy/CLionProjects/3530project3/matplotplusplus/source/CMakeLists.txt
+# =============================================================================
+
+# =============================================================================
+# Object build statements for STATIC_LIBRARY target matplot
+
+
+#############################################
+# Order-only phony target for matplot
+
+build cmake_object_order_depends_target_matplot: phony || cmake_object_order_depends_target_nodesoup
+
+build matplotplusplus/source/matplot/CMakeFiles/matplot.dir/backend/backend_interface.cpp.obj: CXX_COMPILER__matplot_unscanned_Debug C$:/Users/paddy/CLionProjects/3530project3/matplotplusplus/source/matplot/backend/backend_interface.cpp || cmake_object_order_depends_target_matplot
+  DEFINES = -DMATPLOT_BUILD_HIGH_RESOLUTION_WORLD_MAP -DNOMINMAX -Dcimg_display=2
+  DEP_FILE = matplotplusplus\source\matplot\CMakeFiles\matplot.dir\backend\backend_interface.cpp.obj.d
+  FLAGS = -g -std=gnu++17 -fdiagnostics-color=always -Wall -Wextra -pedantic -Werror
+  INCLUDES = -IC:/Users/paddy/CLionProjects/3530project3/matplotplusplus/source -IC:/Users/paddy/CLionProjects/3530project3/cmake-build-debug/matplotplusplus/source/matplot -isystem C:/Users/paddy/CLionProjects/3530project3/matplotplusplus/source/3rd_party/cimg -isystem C:/Users/paddy/CLionProjects/3530project3/matplotplusplus/source/3rd_party/nodesoup/include
+  OBJECT_DIR = matplotplusplus\source\matplot\CMakeFiles\matplot.dir
+  OBJECT_FILE_DIR = matplotplusplus\source\matplot\CMakeFiles\matplot.dir\backend
+  TARGET_COMPILE_PDB = matplotplusplus\source\matplot\CMakeFiles\matplot.dir\matplot.pdb
+  TARGET_PDB = matplotplusplus\source\matplot\libmatplot.pdb
+
+build matplotplusplus/source/matplot/CMakeFiles/matplot.dir/backend/gnuplot.cpp.obj: CXX_COMPILER__matplot_unscanned_Debug C$:/Users/paddy/CLionProjects/3530project3/matplotplusplus/source/matplot/backend/gnuplot.cpp || cmake_object_order_depends_target_matplot
+  DEFINES = -DMATPLOT_BUILD_HIGH_RESOLUTION_WORLD_MAP -DNOMINMAX -Dcimg_display=2
+  DEP_FILE = matplotplusplus\source\matplot\CMakeFiles\matplot.dir\backend\gnuplot.cpp.obj.d
+  FLAGS = -g -std=gnu++17 -fdiagnostics-color=always -Wall -Wextra -pedantic -Werror
+  INCLUDES = -IC:/Users/paddy/CLionProjects/3530project3/matplotplusplus/source -IC:/Users/paddy/CLionProjects/3530project3/cmake-build-debug/matplotplusplus/source/matplot -isystem C:/Users/paddy/CLionProjects/3530project3/matplotplusplus/source/3rd_party/cimg -isystem C:/Users/paddy/CLionProjects/3530project3/matplotplusplus/source/3rd_party/nodesoup/include
+  OBJECT_DIR = matplotplusplus\source\matplot\CMakeFiles\matplot.dir
+  OBJECT_FILE_DIR = matplotplusplus\source\matplot\CMakeFiles\matplot.dir\backend
+  TARGET_COMPILE_PDB = matplotplusplus\source\matplot\CMakeFiles\matplot.dir\matplot.pdb
+  TARGET_PDB = matplotplusplus\source\matplot\libmatplot.pdb
+
+build matplotplusplus/source/matplot/CMakeFiles/matplot.dir/backend/backend_registry.cpp.obj: CXX_COMPILER__matplot_unscanned_Debug C$:/Users/paddy/CLionProjects/3530project3/matplotplusplus/source/matplot/backend/backend_registry.cpp || cmake_object_order_depends_target_matplot
+  DEFINES = -DMATPLOT_BUILD_HIGH_RESOLUTION_WORLD_MAP -DNOMINMAX -Dcimg_display=2
+  DEP_FILE = matplotplusplus\source\matplot\CMakeFiles\matplot.dir\backend\backend_registry.cpp.obj.d
+  FLAGS = -g -std=gnu++17 -fdiagnostics-color=always -Wall -Wextra -pedantic -Werror
+  INCLUDES = -IC:/Users/paddy/CLionProjects/3530project3/matplotplusplus/source -IC:/Users/paddy/CLionProjects/3530project3/cmake-build-debug/matplotplusplus/source/matplot -isystem C:/Users/paddy/CLionProjects/3530project3/matplotplusplus/source/3rd_party/cimg -isystem C:/Users/paddy/CLionProjects/3530project3/matplotplusplus/source/3rd_party/nodesoup/include
+  OBJECT_DIR = matplotplusplus\source\matplot\CMakeFiles\matplot.dir
+  OBJECT_FILE_DIR = matplotplusplus\source\matplot\CMakeFiles\matplot.dir\backend
+  TARGET_COMPILE_PDB = matplotplusplus\source\matplot\CMakeFiles\matplot.dir\matplot.pdb
+  TARGET_PDB = matplotplusplus\source\matplot\libmatplot.pdb
+
+build matplotplusplus/source/matplot/CMakeFiles/matplot.dir/core/axes_type.cpp.obj: CXX_COMPILER__matplot_unscanned_Debug C$:/Users/paddy/CLionProjects/3530project3/matplotplusplus/source/matplot/core/axes_type.cpp || cmake_object_order_depends_target_matplot
+  DEFINES = -DMATPLOT_BUILD_HIGH_RESOLUTION_WORLD_MAP -DNOMINMAX -Dcimg_display=2
+  DEP_FILE = matplotplusplus\source\matplot\CMakeFiles\matplot.dir\core\axes_type.cpp.obj.d
+  FLAGS = -g -std=gnu++17 -fdiagnostics-color=always -Wall -Wextra -pedantic -Werror
+  INCLUDES = -IC:/Users/paddy/CLionProjects/3530project3/matplotplusplus/source -IC:/Users/paddy/CLionProjects/3530project3/cmake-build-debug/matplotplusplus/source/matplot -isystem C:/Users/paddy/CLionProjects/3530project3/matplotplusplus/source/3rd_party/cimg -isystem C:/Users/paddy/CLionProjects/3530project3/matplotplusplus/source/3rd_party/nodesoup/include
+  OBJECT_DIR = matplotplusplus\source\matplot\CMakeFiles\matplot.dir
+  OBJECT_FILE_DIR = matplotplusplus\source\matplot\CMakeFiles\matplot.dir\core
+  TARGET_COMPILE_PDB = matplotplusplus\source\matplot\CMakeFiles\matplot.dir\matplot.pdb
+  TARGET_PDB = matplotplusplus\source\matplot\libmatplot.pdb
+
+build matplotplusplus/source/matplot/CMakeFiles/matplot.dir/core/axes_object.cpp.obj: CXX_COMPILER__matplot_unscanned_Debug C$:/Users/paddy/CLionProjects/3530project3/matplotplusplus/source/matplot/core/axes_object.cpp || cmake_object_order_depends_target_matplot
+  DEFINES = -DMATPLOT_BUILD_HIGH_RESOLUTION_WORLD_MAP -DNOMINMAX -Dcimg_display=2
+  DEP_FILE = matplotplusplus\source\matplot\CMakeFiles\matplot.dir\core\axes_object.cpp.obj.d
+  FLAGS = -g -std=gnu++17 -fdiagnostics-color=always -Wall -Wextra -pedantic -Werror
+  INCLUDES = -IC:/Users/paddy/CLionProjects/3530project3/matplotplusplus/source -IC:/Users/paddy/CLionProjects/3530project3/cmake-build-debug/matplotplusplus/source/matplot -isystem C:/Users/paddy/CLionProjects/3530project3/matplotplusplus/source/3rd_party/cimg -isystem C:/Users/paddy/CLionProjects/3530project3/matplotplusplus/source/3rd_party/nodesoup/include
+  OBJECT_DIR = matplotplusplus\source\matplot\CMakeFiles\matplot.dir
+  OBJECT_FILE_DIR = matplotplusplus\source\matplot\CMakeFiles\matplot.dir\core
+  TARGET_COMPILE_PDB = matplotplusplus\source\matplot\CMakeFiles\matplot.dir\matplot.pdb
+  TARGET_PDB = matplotplusplus\source\matplot\libmatplot.pdb
+
+build matplotplusplus/source/matplot/CMakeFiles/matplot.dir/core/axis_type.cpp.obj: CXX_COMPILER__matplot_unscanned_Debug C$:/Users/paddy/CLionProjects/3530project3/matplotplusplus/source/matplot/core/axis_type.cpp || cmake_object_order_depends_target_matplot
+  DEFINES = -DMATPLOT_BUILD_HIGH_RESOLUTION_WORLD_MAP -DNOMINMAX -Dcimg_display=2
+  DEP_FILE = matplotplusplus\source\matplot\CMakeFiles\matplot.dir\core\axis_type.cpp.obj.d
+  FLAGS = -g -std=gnu++17 -fdiagnostics-color=always -Wall -Wextra -pedantic -Werror
+  INCLUDES = -IC:/Users/paddy/CLionProjects/3530project3/matplotplusplus/source -IC:/Users/paddy/CLionProjects/3530project3/cmake-build-debug/matplotplusplus/source/matplot -isystem C:/Users/paddy/CLionProjects/3530project3/matplotplusplus/source/3rd_party/cimg -isystem C:/Users/paddy/CLionProjects/3530project3/matplotplusplus/source/3rd_party/nodesoup/include
+  OBJECT_DIR = matplotplusplus\source\matplot\CMakeFiles\matplot.dir
+  OBJECT_FILE_DIR = matplotplusplus\source\matplot\CMakeFiles\matplot.dir\core
+  TARGET_COMPILE_PDB = matplotplusplus\source\matplot\CMakeFiles\matplot.dir\matplot.pdb
+  TARGET_PDB = matplotplusplus\source\matplot\libmatplot.pdb
+
+build matplotplusplus/source/matplot/CMakeFiles/matplot.dir/core/figure_type.cpp.obj: CXX_COMPILER__matplot_unscanned_Debug C$:/Users/paddy/CLionProjects/3530project3/matplotplusplus/source/matplot/core/figure_type.cpp || cmake_object_order_depends_target_matplot
+  DEFINES = -DMATPLOT_BUILD_HIGH_RESOLUTION_WORLD_MAP -DNOMINMAX -Dcimg_display=2
+  DEP_FILE = matplotplusplus\source\matplot\CMakeFiles\matplot.dir\core\figure_type.cpp.obj.d
+  FLAGS = -g -std=gnu++17 -fdiagnostics-color=always -Wall -Wextra -pedantic -Werror
+  INCLUDES = -IC:/Users/paddy/CLionProjects/3530project3/matplotplusplus/source -IC:/Users/paddy/CLionProjects/3530project3/cmake-build-debug/matplotplusplus/source/matplot -isystem C:/Users/paddy/CLionProjects/3530project3/matplotplusplus/source/3rd_party/cimg -isystem C:/Users/paddy/CLionProjects/3530project3/matplotplusplus/source/3rd_party/nodesoup/include
+  OBJECT_DIR = matplotplusplus\source\matplot\CMakeFiles\matplot.dir
+  OBJECT_FILE_DIR = matplotplusplus\source\matplot\CMakeFiles\matplot.dir\core
+  TARGET_COMPILE_PDB = matplotplusplus\source\matplot\CMakeFiles\matplot.dir\matplot.pdb
+  TARGET_PDB = matplotplusplus\source\matplot\libmatplot.pdb
+
+build matplotplusplus/source/matplot/CMakeFiles/matplot.dir/core/figure_registry.cpp.obj: CXX_COMPILER__matplot_unscanned_Debug C$:/Users/paddy/CLionProjects/3530project3/matplotplusplus/source/matplot/core/figure_registry.cpp || cmake_object_order_depends_target_matplot
+  DEFINES = -DMATPLOT_BUILD_HIGH_RESOLUTION_WORLD_MAP -DNOMINMAX -Dcimg_display=2
+  DEP_FILE = matplotplusplus\source\matplot\CMakeFiles\matplot.dir\core\figure_registry.cpp.obj.d
+  FLAGS = -g -std=gnu++17 -fdiagnostics-color=always -Wall -Wextra -pedantic -Werror
+  INCLUDES = -IC:/Users/paddy/CLionProjects/3530project3/matplotplusplus/source -IC:/Users/paddy/CLionProjects/3530project3/cmake-build-debug/matplotplusplus/source/matplot -isystem C:/Users/paddy/CLionProjects/3530project3/matplotplusplus/source/3rd_party/cimg -isystem C:/Users/paddy/CLionProjects/3530project3/matplotplusplus/source/3rd_party/nodesoup/include
+  OBJECT_DIR = matplotplusplus\source\matplot\CMakeFiles\matplot.dir
+  OBJECT_FILE_DIR = matplotplusplus\source\matplot\CMakeFiles\matplot.dir\core
+  TARGET_COMPILE_PDB = matplotplusplus\source\matplot\CMakeFiles\matplot.dir\matplot.pdb
+  TARGET_PDB = matplotplusplus\source\matplot\libmatplot.pdb
+
+build matplotplusplus/source/matplot/CMakeFiles/matplot.dir/core/legend.cpp.obj: CXX_COMPILER__matplot_unscanned_Debug C$:/Users/paddy/CLionProjects/3530project3/matplotplusplus/source/matplot/core/legend.cpp || cmake_object_order_depends_target_matplot
+  DEFINES = -DMATPLOT_BUILD_HIGH_RESOLUTION_WORLD_MAP -DNOMINMAX -Dcimg_display=2
+  DEP_FILE = matplotplusplus\source\matplot\CMakeFiles\matplot.dir\core\legend.cpp.obj.d
+  FLAGS = -g -std=gnu++17 -fdiagnostics-color=always -Wall -Wextra -pedantic -Werror
+  INCLUDES = -IC:/Users/paddy/CLionProjects/3530project3/matplotplusplus/source -IC:/Users/paddy/CLionProjects/3530project3/cmake-build-debug/matplotplusplus/source/matplot -isystem C:/Users/paddy/CLionProjects/3530project3/matplotplusplus/source/3rd_party/cimg -isystem C:/Users/paddy/CLionProjects/3530project3/matplotplusplus/source/3rd_party/nodesoup/include
+  OBJECT_DIR = matplotplusplus\source\matplot\CMakeFiles\matplot.dir
+  OBJECT_FILE_DIR = matplotplusplus\source\matplot\CMakeFiles\matplot.dir\core
+  TARGET_COMPILE_PDB = matplotplusplus\source\matplot\CMakeFiles\matplot.dir\matplot.pdb
+  TARGET_PDB = matplotplusplus\source\matplot\libmatplot.pdb
+
+build matplotplusplus/source/matplot/CMakeFiles/matplot.dir/core/line_spec.cpp.obj: CXX_COMPILER__matplot_unscanned_Debug C$:/Users/paddy/CLionProjects/3530project3/matplotplusplus/source/matplot/core/line_spec.cpp || cmake_object_order_depends_target_matplot
+  DEFINES = -DMATPLOT_BUILD_HIGH_RESOLUTION_WORLD_MAP -DNOMINMAX -Dcimg_display=2
+  DEP_FILE = matplotplusplus\source\matplot\CMakeFiles\matplot.dir\core\line_spec.cpp.obj.d
+  FLAGS = -g -std=gnu++17 -fdiagnostics-color=always -Wall -Wextra -pedantic -Werror
+  INCLUDES = -IC:/Users/paddy/CLionProjects/3530project3/matplotplusplus/source -IC:/Users/paddy/CLionProjects/3530project3/cmake-build-debug/matplotplusplus/source/matplot -isystem C:/Users/paddy/CLionProjects/3530project3/matplotplusplus/source/3rd_party/cimg -isystem C:/Users/paddy/CLionProjects/3530project3/matplotplusplus/source/3rd_party/nodesoup/include
+  OBJECT_DIR = matplotplusplus\source\matplot\CMakeFiles\matplot.dir
+  OBJECT_FILE_DIR = matplotplusplus\source\matplot\CMakeFiles\matplot.dir\core
+  TARGET_COMPILE_PDB = matplotplusplus\source\matplot\CMakeFiles\matplot.dir\matplot.pdb
+  TARGET_PDB = matplotplusplus\source\matplot\libmatplot.pdb
+
+build matplotplusplus/source/matplot/CMakeFiles/matplot.dir/util/colors.cpp.obj: CXX_COMPILER__matplot_unscanned_Debug C$:/Users/paddy/CLionProjects/3530project3/matplotplusplus/source/matplot/util/colors.cpp || cmake_object_order_depends_target_matplot
+  DEFINES = -DMATPLOT_BUILD_HIGH_RESOLUTION_WORLD_MAP -DNOMINMAX -Dcimg_display=2
+  DEP_FILE = matplotplusplus\source\matplot\CMakeFiles\matplot.dir\util\colors.cpp.obj.d
+  FLAGS = -g -std=gnu++17 -fdiagnostics-color=always -Wall -Wextra -pedantic -Werror
+  INCLUDES = -IC:/Users/paddy/CLionProjects/3530project3/matplotplusplus/source -IC:/Users/paddy/CLionProjects/3530project3/cmake-build-debug/matplotplusplus/source/matplot -isystem C:/Users/paddy/CLionProjects/3530project3/matplotplusplus/source/3rd_party/cimg -isystem C:/Users/paddy/CLionProjects/3530project3/matplotplusplus/source/3rd_party/nodesoup/include
+  OBJECT_DIR = matplotplusplus\source\matplot\CMakeFiles\matplot.dir
+  OBJECT_FILE_DIR = matplotplusplus\source\matplot\CMakeFiles\matplot.dir\util
+  TARGET_COMPILE_PDB = matplotplusplus\source\matplot\CMakeFiles\matplot.dir\matplot.pdb
+  TARGET_PDB = matplotplusplus\source\matplot\libmatplot.pdb
+
+build matplotplusplus/source/matplot/CMakeFiles/matplot.dir/util/common.cpp.obj: CXX_COMPILER__matplot_unscanned_Debug C$:/Users/paddy/CLionProjects/3530project3/matplotplusplus/source/matplot/util/common.cpp || cmake_object_order_depends_target_matplot
+  DEFINES = -DMATPLOT_BUILD_HIGH_RESOLUTION_WORLD_MAP -DNOMINMAX -Dcimg_display=2
+  DEP_FILE = matplotplusplus\source\matplot\CMakeFiles\matplot.dir\util\common.cpp.obj.d
+  FLAGS = -g -std=gnu++17 -fdiagnostics-color=always -Wall -Wextra -pedantic -Werror
+  INCLUDES = -IC:/Users/paddy/CLionProjects/3530project3/matplotplusplus/source -IC:/Users/paddy/CLionProjects/3530project3/cmake-build-debug/matplotplusplus/source/matplot -isystem C:/Users/paddy/CLionProjects/3530project3/matplotplusplus/source/3rd_party/cimg -isystem C:/Users/paddy/CLionProjects/3530project3/matplotplusplus/source/3rd_party/nodesoup/include
+  OBJECT_DIR = matplotplusplus\source\matplot\CMakeFiles\matplot.dir
+  OBJECT_FILE_DIR = matplotplusplus\source\matplot\CMakeFiles\matplot.dir\util
+  TARGET_COMPILE_PDB = matplotplusplus\source\matplot\CMakeFiles\matplot.dir\matplot.pdb
+  TARGET_PDB = matplotplusplus\source\matplot\libmatplot.pdb
+
+build matplotplusplus/source/matplot/CMakeFiles/matplot.dir/util/contourc.cpp.obj: CXX_COMPILER__matplot_unscanned_Debug C$:/Users/paddy/CLionProjects/3530project3/matplotplusplus/source/matplot/util/contourc.cpp || cmake_object_order_depends_target_matplot
+  DEFINES = -DMATPLOT_BUILD_HIGH_RESOLUTION_WORLD_MAP -DNOMINMAX -Dcimg_display=2
+  DEP_FILE = matplotplusplus\source\matplot\CMakeFiles\matplot.dir\util\contourc.cpp.obj.d
+  FLAGS = -g -std=gnu++17 -fdiagnostics-color=always -Wall -Wextra -pedantic -Werror
+  INCLUDES = -IC:/Users/paddy/CLionProjects/3530project3/matplotplusplus/source -IC:/Users/paddy/CLionProjects/3530project3/cmake-build-debug/matplotplusplus/source/matplot -isystem C:/Users/paddy/CLionProjects/3530project3/matplotplusplus/source/3rd_party/cimg -isystem C:/Users/paddy/CLionProjects/3530project3/matplotplusplus/source/3rd_party/nodesoup/include
+  OBJECT_DIR = matplotplusplus\source\matplot\CMakeFiles\matplot.dir
+  OBJECT_FILE_DIR = matplotplusplus\source\matplot\CMakeFiles\matplot.dir\util
+  TARGET_COMPILE_PDB = matplotplusplus\source\matplot\CMakeFiles\matplot.dir\matplot.pdb
+  TARGET_PDB = matplotplusplus\source\matplot\libmatplot.pdb
+
+build matplotplusplus/source/matplot/CMakeFiles/matplot.dir/util/popen.cpp.obj: CXX_COMPILER__matplot_unscanned_Debug C$:/Users/paddy/CLionProjects/3530project3/matplotplusplus/source/matplot/util/popen.cpp || cmake_object_order_depends_target_matplot
+  DEFINES = -DMATPLOT_BUILD_HIGH_RESOLUTION_WORLD_MAP -DNOMINMAX -Dcimg_display=2
+  DEP_FILE = matplotplusplus\source\matplot\CMakeFiles\matplot.dir\util\popen.cpp.obj.d
+  FLAGS = -g -std=gnu++17 -fdiagnostics-color=always -Wall -Wextra -pedantic -Werror
+  INCLUDES = -IC:/Users/paddy/CLionProjects/3530project3/matplotplusplus/source -IC:/Users/paddy/CLionProjects/3530project3/cmake-build-debug/matplotplusplus/source/matplot -isystem C:/Users/paddy/CLionProjects/3530project3/matplotplusplus/source/3rd_party/cimg -isystem C:/Users/paddy/CLionProjects/3530project3/matplotplusplus/source/3rd_party/nodesoup/include
+  OBJECT_DIR = matplotplusplus\source\matplot\CMakeFiles\matplot.dir
+  OBJECT_FILE_DIR = matplotplusplus\source\matplot\CMakeFiles\matplot.dir\util
+  TARGET_COMPILE_PDB = matplotplusplus\source\matplot\CMakeFiles\matplot.dir\matplot.pdb
+  TARGET_PDB = matplotplusplus\source\matplot\libmatplot.pdb
+
+build matplotplusplus/source/matplot/CMakeFiles/matplot.dir/util/world_cities.cpp.obj: CXX_COMPILER__matplot_unscanned_Debug C$:/Users/paddy/CLionProjects/3530project3/matplotplusplus/source/matplot/util/world_cities.cpp || cmake_object_order_depends_target_matplot
+  DEFINES = -DMATPLOT_BUILD_HIGH_RESOLUTION_WORLD_MAP -DNOMINMAX -Dcimg_display=2
+  DEP_FILE = matplotplusplus\source\matplot\CMakeFiles\matplot.dir\util\world_cities.cpp.obj.d
+  FLAGS = -g -std=gnu++17 -fdiagnostics-color=always -Wall -Wextra -pedantic -Werror
+  INCLUDES = -IC:/Users/paddy/CLionProjects/3530project3/matplotplusplus/source -IC:/Users/paddy/CLionProjects/3530project3/cmake-build-debug/matplotplusplus/source/matplot -isystem C:/Users/paddy/CLionProjects/3530project3/matplotplusplus/source/3rd_party/cimg -isystem C:/Users/paddy/CLionProjects/3530project3/matplotplusplus/source/3rd_party/nodesoup/include
+  OBJECT_DIR = matplotplusplus\source\matplot\CMakeFiles\matplot.dir
+  OBJECT_FILE_DIR = matplotplusplus\source\matplot\CMakeFiles\matplot.dir\util
+  TARGET_COMPILE_PDB = matplotplusplus\source\matplot\CMakeFiles\matplot.dir\matplot.pdb
+  TARGET_PDB = matplotplusplus\source\matplot\libmatplot.pdb
+
+build matplotplusplus/source/matplot/CMakeFiles/matplot.dir/util/world_map_10m.cpp.obj: CXX_COMPILER__matplot_unscanned_Debug C$:/Users/paddy/CLionProjects/3530project3/matplotplusplus/source/matplot/util/world_map_10m.cpp || cmake_object_order_depends_target_matplot
+  DEFINES = -DMATPLOT_BUILD_HIGH_RESOLUTION_WORLD_MAP -DNOMINMAX -Dcimg_display=2
+  DEP_FILE = matplotplusplus\source\matplot\CMakeFiles\matplot.dir\util\world_map_10m.cpp.obj.d
+  FLAGS = -g -std=gnu++17 -fdiagnostics-color=always -Wall -Wextra -pedantic -Werror
+  INCLUDES = -IC:/Users/paddy/CLionProjects/3530project3/matplotplusplus/source -IC:/Users/paddy/CLionProjects/3530project3/cmake-build-debug/matplotplusplus/source/matplot -isystem C:/Users/paddy/CLionProjects/3530project3/matplotplusplus/source/3rd_party/cimg -isystem C:/Users/paddy/CLionProjects/3530project3/matplotplusplus/source/3rd_party/nodesoup/include
+  OBJECT_DIR = matplotplusplus\source\matplot\CMakeFiles\matplot.dir
+  OBJECT_FILE_DIR = matplotplusplus\source\matplot\CMakeFiles\matplot.dir\util
+  TARGET_COMPILE_PDB = matplotplusplus\source\matplot\CMakeFiles\matplot.dir\matplot.pdb
+  TARGET_PDB = matplotplusplus\source\matplot\libmatplot.pdb
+
+build matplotplusplus/source/matplot/CMakeFiles/matplot.dir/util/world_map_50m.cpp.obj: CXX_COMPILER__matplot_unscanned_Debug C$:/Users/paddy/CLionProjects/3530project3/matplotplusplus/source/matplot/util/world_map_50m.cpp || cmake_object_order_depends_target_matplot
+  DEFINES = -DMATPLOT_BUILD_HIGH_RESOLUTION_WORLD_MAP -DNOMINMAX -Dcimg_display=2
+  DEP_FILE = matplotplusplus\source\matplot\CMakeFiles\matplot.dir\util\world_map_50m.cpp.obj.d
+  FLAGS = -g -std=gnu++17 -fdiagnostics-color=always -Wall -Wextra -pedantic -Werror
+  INCLUDES = -IC:/Users/paddy/CLionProjects/3530project3/matplotplusplus/source -IC:/Users/paddy/CLionProjects/3530project3/cmake-build-debug/matplotplusplus/source/matplot -isystem C:/Users/paddy/CLionProjects/3530project3/matplotplusplus/source/3rd_party/cimg -isystem C:/Users/paddy/CLionProjects/3530project3/matplotplusplus/source/3rd_party/nodesoup/include
+  OBJECT_DIR = matplotplusplus\source\matplot\CMakeFiles\matplot.dir
+  OBJECT_FILE_DIR = matplotplusplus\source\matplot\CMakeFiles\matplot.dir\util
+  TARGET_COMPILE_PDB = matplotplusplus\source\matplot\CMakeFiles\matplot.dir\matplot.pdb
+  TARGET_PDB = matplotplusplus\source\matplot\libmatplot.pdb
+
+build matplotplusplus/source/matplot/CMakeFiles/matplot.dir/util/world_map_110m.cpp.obj: CXX_COMPILER__matplot_unscanned_Debug C$:/Users/paddy/CLionProjects/3530project3/matplotplusplus/source/matplot/util/world_map_110m.cpp || cmake_object_order_depends_target_matplot
+  DEFINES = -DMATPLOT_BUILD_HIGH_RESOLUTION_WORLD_MAP -DNOMINMAX -Dcimg_display=2
+  DEP_FILE = matplotplusplus\source\matplot\CMakeFiles\matplot.dir\util\world_map_110m.cpp.obj.d
+  FLAGS = -g -std=gnu++17 -fdiagnostics-color=always -Wall -Wextra -pedantic -Werror
+  INCLUDES = -IC:/Users/paddy/CLionProjects/3530project3/matplotplusplus/source -IC:/Users/paddy/CLionProjects/3530project3/cmake-build-debug/matplotplusplus/source/matplot -isystem C:/Users/paddy/CLionProjects/3530project3/matplotplusplus/source/3rd_party/cimg -isystem C:/Users/paddy/CLionProjects/3530project3/matplotplusplus/source/3rd_party/nodesoup/include
+  OBJECT_DIR = matplotplusplus\source\matplot\CMakeFiles\matplot.dir
+  OBJECT_FILE_DIR = matplotplusplus\source\matplot\CMakeFiles\matplot.dir\util
+  TARGET_COMPILE_PDB = matplotplusplus\source\matplot\CMakeFiles\matplot.dir\matplot.pdb
+  TARGET_PDB = matplotplusplus\source\matplot\libmatplot.pdb
+
+build matplotplusplus/source/matplot/CMakeFiles/matplot.dir/axes_objects/bars.cpp.obj: CXX_COMPILER__matplot_unscanned_Debug C$:/Users/paddy/CLionProjects/3530project3/matplotplusplus/source/matplot/axes_objects/bars.cpp || cmake_object_order_depends_target_matplot
+  DEFINES = -DMATPLOT_BUILD_HIGH_RESOLUTION_WORLD_MAP -DNOMINMAX -Dcimg_display=2
+  DEP_FILE = matplotplusplus\source\matplot\CMakeFiles\matplot.dir\axes_objects\bars.cpp.obj.d
+  FLAGS = -g -std=gnu++17 -fdiagnostics-color=always -Wall -Wextra -pedantic -Werror
+  INCLUDES = -IC:/Users/paddy/CLionProjects/3530project3/matplotplusplus/source -IC:/Users/paddy/CLionProjects/3530project3/cmake-build-debug/matplotplusplus/source/matplot -isystem C:/Users/paddy/CLionProjects/3530project3/matplotplusplus/source/3rd_party/cimg -isystem C:/Users/paddy/CLionProjects/3530project3/matplotplusplus/source/3rd_party/nodesoup/include
+  OBJECT_DIR = matplotplusplus\source\matplot\CMakeFiles\matplot.dir
+  OBJECT_FILE_DIR = matplotplusplus\source\matplot\CMakeFiles\matplot.dir\axes_objects
+  TARGET_COMPILE_PDB = matplotplusplus\source\matplot\CMakeFiles\matplot.dir\matplot.pdb
+  TARGET_PDB = matplotplusplus\source\matplot\libmatplot.pdb
+
+build matplotplusplus/source/matplot/CMakeFiles/matplot.dir/axes_objects/box_chart.cpp.obj: CXX_COMPILER__matplot_unscanned_Debug C$:/Users/paddy/CLionProjects/3530project3/matplotplusplus/source/matplot/axes_objects/box_chart.cpp || cmake_object_order_depends_target_matplot
+  DEFINES = -DMATPLOT_BUILD_HIGH_RESOLUTION_WORLD_MAP -DNOMINMAX -Dcimg_display=2
+  DEP_FILE = matplotplusplus\source\matplot\CMakeFiles\matplot.dir\axes_objects\box_chart.cpp.obj.d
+  FLAGS = -g -std=gnu++17 -fdiagnostics-color=always -Wall -Wextra -pedantic -Werror
+  INCLUDES = -IC:/Users/paddy/CLionProjects/3530project3/matplotplusplus/source -IC:/Users/paddy/CLionProjects/3530project3/cmake-build-debug/matplotplusplus/source/matplot -isystem C:/Users/paddy/CLionProjects/3530project3/matplotplusplus/source/3rd_party/cimg -isystem C:/Users/paddy/CLionProjects/3530project3/matplotplusplus/source/3rd_party/nodesoup/include
+  OBJECT_DIR = matplotplusplus\source\matplot\CMakeFiles\matplot.dir
+  OBJECT_FILE_DIR = matplotplusplus\source\matplot\CMakeFiles\matplot.dir\axes_objects
+  TARGET_COMPILE_PDB = matplotplusplus\source\matplot\CMakeFiles\matplot.dir\matplot.pdb
+  TARGET_PDB = matplotplusplus\source\matplot\libmatplot.pdb
+
+build matplotplusplus/source/matplot/CMakeFiles/matplot.dir/axes_objects/circles.cpp.obj: CXX_COMPILER__matplot_unscanned_Debug C$:/Users/paddy/CLionProjects/3530project3/matplotplusplus/source/matplot/axes_objects/circles.cpp || cmake_object_order_depends_target_matplot
+  DEFINES = -DMATPLOT_BUILD_HIGH_RESOLUTION_WORLD_MAP -DNOMINMAX -Dcimg_display=2
+  DEP_FILE = matplotplusplus\source\matplot\CMakeFiles\matplot.dir\axes_objects\circles.cpp.obj.d
+  FLAGS = -g -std=gnu++17 -fdiagnostics-color=always -Wall -Wextra -pedantic -Werror
+  INCLUDES = -IC:/Users/paddy/CLionProjects/3530project3/matplotplusplus/source -IC:/Users/paddy/CLionProjects/3530project3/cmake-build-debug/matplotplusplus/source/matplot -isystem C:/Users/paddy/CLionProjects/3530project3/matplotplusplus/source/3rd_party/cimg -isystem C:/Users/paddy/CLionProjects/3530project3/matplotplusplus/source/3rd_party/nodesoup/include
+  OBJECT_DIR = matplotplusplus\source\matplot\CMakeFiles\matplot.dir
+  OBJECT_FILE_DIR = matplotplusplus\source\matplot\CMakeFiles\matplot.dir\axes_objects
+  TARGET_COMPILE_PDB = matplotplusplus\source\matplot\CMakeFiles\matplot.dir\matplot.pdb
+  TARGET_PDB = matplotplusplus\source\matplot\libmatplot.pdb
+
+build matplotplusplus/source/matplot/CMakeFiles/matplot.dir/axes_objects/contours.cpp.obj: CXX_COMPILER__matplot_unscanned_Debug C$:/Users/paddy/CLionProjects/3530project3/matplotplusplus/source/matplot/axes_objects/contours.cpp || cmake_object_order_depends_target_matplot
+  DEFINES = -DMATPLOT_BUILD_HIGH_RESOLUTION_WORLD_MAP -DNOMINMAX -Dcimg_display=2
+  DEP_FILE = matplotplusplus\source\matplot\CMakeFiles\matplot.dir\axes_objects\contours.cpp.obj.d
+  FLAGS = -g -std=gnu++17 -fdiagnostics-color=always -Wall -Wextra -pedantic -Werror
+  INCLUDES = -IC:/Users/paddy/CLionProjects/3530project3/matplotplusplus/source -IC:/Users/paddy/CLionProjects/3530project3/cmake-build-debug/matplotplusplus/source/matplot -isystem C:/Users/paddy/CLionProjects/3530project3/matplotplusplus/source/3rd_party/cimg -isystem C:/Users/paddy/CLionProjects/3530project3/matplotplusplus/source/3rd_party/nodesoup/include
+  OBJECT_DIR = matplotplusplus\source\matplot\CMakeFiles\matplot.dir
+  OBJECT_FILE_DIR = matplotplusplus\source\matplot\CMakeFiles\matplot.dir\axes_objects
+  TARGET_COMPILE_PDB = matplotplusplus\source\matplot\CMakeFiles\matplot.dir\matplot.pdb
+  TARGET_PDB = matplotplusplus\source\matplot\libmatplot.pdb
+
+build matplotplusplus/source/matplot/CMakeFiles/matplot.dir/axes_objects/error_bar.cpp.obj: CXX_COMPILER__matplot_unscanned_Debug C$:/Users/paddy/CLionProjects/3530project3/matplotplusplus/source/matplot/axes_objects/error_bar.cpp || cmake_object_order_depends_target_matplot
+  DEFINES = -DMATPLOT_BUILD_HIGH_RESOLUTION_WORLD_MAP -DNOMINMAX -Dcimg_display=2
+  DEP_FILE = matplotplusplus\source\matplot\CMakeFiles\matplot.dir\axes_objects\error_bar.cpp.obj.d
+  FLAGS = -g -std=gnu++17 -fdiagnostics-color=always -Wall -Wextra -pedantic -Werror
+  INCLUDES = -IC:/Users/paddy/CLionProjects/3530project3/matplotplusplus/source -IC:/Users/paddy/CLionProjects/3530project3/cmake-build-debug/matplotplusplus/source/matplot -isystem C:/Users/paddy/CLionProjects/3530project3/matplotplusplus/source/3rd_party/cimg -isystem C:/Users/paddy/CLionProjects/3530project3/matplotplusplus/source/3rd_party/nodesoup/include
+  OBJECT_DIR = matplotplusplus\source\matplot\CMakeFiles\matplot.dir
+  OBJECT_FILE_DIR = matplotplusplus\source\matplot\CMakeFiles\matplot.dir\axes_objects
+  TARGET_COMPILE_PDB = matplotplusplus\source\matplot\CMakeFiles\matplot.dir\matplot.pdb
+  TARGET_PDB = matplotplusplus\source\matplot\libmatplot.pdb
+
+build matplotplusplus/source/matplot/CMakeFiles/matplot.dir/axes_objects/filled_area.cpp.obj: CXX_COMPILER__matplot_unscanned_Debug C$:/Users/paddy/CLionProjects/3530project3/matplotplusplus/source/matplot/axes_objects/filled_area.cpp || cmake_object_order_depends_target_matplot
+  DEFINES = -DMATPLOT_BUILD_HIGH_RESOLUTION_WORLD_MAP -DNOMINMAX -Dcimg_display=2
+  DEP_FILE = matplotplusplus\source\matplot\CMakeFiles\matplot.dir\axes_objects\filled_area.cpp.obj.d
+  FLAGS = -g -std=gnu++17 -fdiagnostics-color=always -Wall -Wextra -pedantic -Werror
+  INCLUDES = -IC:/Users/paddy/CLionProjects/3530project3/matplotplusplus/source -IC:/Users/paddy/CLionProjects/3530project3/cmake-build-debug/matplotplusplus/source/matplot -isystem C:/Users/paddy/CLionProjects/3530project3/matplotplusplus/source/3rd_party/cimg -isystem C:/Users/paddy/CLionProjects/3530project3/matplotplusplus/source/3rd_party/nodesoup/include
+  OBJECT_DIR = matplotplusplus\source\matplot\CMakeFiles\matplot.dir
+  OBJECT_FILE_DIR = matplotplusplus\source\matplot\CMakeFiles\matplot.dir\axes_objects
+  TARGET_COMPILE_PDB = matplotplusplus\source\matplot\CMakeFiles\matplot.dir\matplot.pdb
+  TARGET_PDB = matplotplusplus\source\matplot\libmatplot.pdb
+
+build matplotplusplus/source/matplot/CMakeFiles/matplot.dir/axes_objects/function_line.cpp.obj: CXX_COMPILER__matplot_unscanned_Debug C$:/Users/paddy/CLionProjects/3530project3/matplotplusplus/source/matplot/axes_objects/function_line.cpp || cmake_object_order_depends_target_matplot
+  DEFINES = -DMATPLOT_BUILD_HIGH_RESOLUTION_WORLD_MAP -DNOMINMAX -Dcimg_display=2
+  DEP_FILE = matplotplusplus\source\matplot\CMakeFiles\matplot.dir\axes_objects\function_line.cpp.obj.d
+  FLAGS = -g -std=gnu++17 -fdiagnostics-color=always -Wall -Wextra -pedantic -Werror
+  INCLUDES = -IC:/Users/paddy/CLionProjects/3530project3/matplotplusplus/source -IC:/Users/paddy/CLionProjects/3530project3/cmake-build-debug/matplotplusplus/source/matplot -isystem C:/Users/paddy/CLionProjects/3530project3/matplotplusplus/source/3rd_party/cimg -isystem C:/Users/paddy/CLionProjects/3530project3/matplotplusplus/source/3rd_party/nodesoup/include
+  OBJECT_DIR = matplotplusplus\source\matplot\CMakeFiles\matplot.dir
+  OBJECT_FILE_DIR = matplotplusplus\source\matplot\CMakeFiles\matplot.dir\axes_objects
+  TARGET_COMPILE_PDB = matplotplusplus\source\matplot\CMakeFiles\matplot.dir\matplot.pdb
+  TARGET_PDB = matplotplusplus\source\matplot\libmatplot.pdb
+
+build matplotplusplus/source/matplot/CMakeFiles/matplot.dir/axes_objects/histogram.cpp.obj: CXX_COMPILER__matplot_unscanned_Debug C$:/Users/paddy/CLionProjects/3530project3/matplotplusplus/source/matplot/axes_objects/histogram.cpp || cmake_object_order_depends_target_matplot
+  DEFINES = -DMATPLOT_BUILD_HIGH_RESOLUTION_WORLD_MAP -DNOMINMAX -Dcimg_display=2
+  DEP_FILE = matplotplusplus\source\matplot\CMakeFiles\matplot.dir\axes_objects\histogram.cpp.obj.d
+  FLAGS = -g -std=gnu++17 -fdiagnostics-color=always -Wall -Wextra -pedantic -Werror
+  INCLUDES = -IC:/Users/paddy/CLionProjects/3530project3/matplotplusplus/source -IC:/Users/paddy/CLionProjects/3530project3/cmake-build-debug/matplotplusplus/source/matplot -isystem C:/Users/paddy/CLionProjects/3530project3/matplotplusplus/source/3rd_party/cimg -isystem C:/Users/paddy/CLionProjects/3530project3/matplotplusplus/source/3rd_party/nodesoup/include
+  OBJECT_DIR = matplotplusplus\source\matplot\CMakeFiles\matplot.dir
+  OBJECT_FILE_DIR = matplotplusplus\source\matplot\CMakeFiles\matplot.dir\axes_objects
+  TARGET_COMPILE_PDB = matplotplusplus\source\matplot\CMakeFiles\matplot.dir\matplot.pdb
+  TARGET_PDB = matplotplusplus\source\matplot\libmatplot.pdb
+
+build matplotplusplus/source/matplot/CMakeFiles/matplot.dir/axes_objects/labels.cpp.obj: CXX_COMPILER__matplot_unscanned_Debug C$:/Users/paddy/CLionProjects/3530project3/matplotplusplus/source/matplot/axes_objects/labels.cpp || cmake_object_order_depends_target_matplot
+  DEFINES = -DMATPLOT_BUILD_HIGH_RESOLUTION_WORLD_MAP -DNOMINMAX -Dcimg_display=2
+  DEP_FILE = matplotplusplus\source\matplot\CMakeFiles\matplot.dir\axes_objects\labels.cpp.obj.d
+  FLAGS = -g -std=gnu++17 -fdiagnostics-color=always -Wall -Wextra -pedantic -Werror
+  INCLUDES = -IC:/Users/paddy/CLionProjects/3530project3/matplotplusplus/source -IC:/Users/paddy/CLionProjects/3530project3/cmake-build-debug/matplotplusplus/source/matplot -isystem C:/Users/paddy/CLionProjects/3530project3/matplotplusplus/source/3rd_party/cimg -isystem C:/Users/paddy/CLionProjects/3530project3/matplotplusplus/source/3rd_party/nodesoup/include
+  OBJECT_DIR = matplotplusplus\source\matplot\CMakeFiles\matplot.dir
+  OBJECT_FILE_DIR = matplotplusplus\source\matplot\CMakeFiles\matplot.dir\axes_objects
+  TARGET_COMPILE_PDB = matplotplusplus\source\matplot\CMakeFiles\matplot.dir\matplot.pdb
+  TARGET_PDB = matplotplusplus\source\matplot\libmatplot.pdb
+
+build matplotplusplus/source/matplot/CMakeFiles/matplot.dir/axes_objects/line.cpp.obj: CXX_COMPILER__matplot_unscanned_Debug C$:/Users/paddy/CLionProjects/3530project3/matplotplusplus/source/matplot/axes_objects/line.cpp || cmake_object_order_depends_target_matplot
+  DEFINES = -DMATPLOT_BUILD_HIGH_RESOLUTION_WORLD_MAP -DNOMINMAX -Dcimg_display=2
+  DEP_FILE = matplotplusplus\source\matplot\CMakeFiles\matplot.dir\axes_objects\line.cpp.obj.d
+  FLAGS = -g -std=gnu++17 -fdiagnostics-color=always -Wall -Wextra -pedantic -Werror
+  INCLUDES = -IC:/Users/paddy/CLionProjects/3530project3/matplotplusplus/source -IC:/Users/paddy/CLionProjects/3530project3/cmake-build-debug/matplotplusplus/source/matplot -isystem C:/Users/paddy/CLionProjects/3530project3/matplotplusplus/source/3rd_party/cimg -isystem C:/Users/paddy/CLionProjects/3530project3/matplotplusplus/source/3rd_party/nodesoup/include
+  OBJECT_DIR = matplotplusplus\source\matplot\CMakeFiles\matplot.dir
+  OBJECT_FILE_DIR = matplotplusplus\source\matplot\CMakeFiles\matplot.dir\axes_objects
+  TARGET_COMPILE_PDB = matplotplusplus\source\matplot\CMakeFiles\matplot.dir\matplot.pdb
+  TARGET_PDB = matplotplusplus\source\matplot\libmatplot.pdb
+
+build matplotplusplus/source/matplot/CMakeFiles/matplot.dir/axes_objects/matrix.cpp.obj: CXX_COMPILER__matplot_unscanned_Debug C$:/Users/paddy/CLionProjects/3530project3/matplotplusplus/source/matplot/axes_objects/matrix.cpp || cmake_object_order_depends_target_matplot
+  DEFINES = -DMATPLOT_BUILD_HIGH_RESOLUTION_WORLD_MAP -DNOMINMAX -Dcimg_display=2
+  DEP_FILE = matplotplusplus\source\matplot\CMakeFiles\matplot.dir\axes_objects\matrix.cpp.obj.d
+  FLAGS = -g -std=gnu++17 -fdiagnostics-color=always -Wall -Wextra -pedantic -Werror
+  INCLUDES = -IC:/Users/paddy/CLionProjects/3530project3/matplotplusplus/source -IC:/Users/paddy/CLionProjects/3530project3/cmake-build-debug/matplotplusplus/source/matplot -isystem C:/Users/paddy/CLionProjects/3530project3/matplotplusplus/source/3rd_party/cimg -isystem C:/Users/paddy/CLionProjects/3530project3/matplotplusplus/source/3rd_party/nodesoup/include
+  OBJECT_DIR = matplotplusplus\source\matplot\CMakeFiles\matplot.dir
+  OBJECT_FILE_DIR = matplotplusplus\source\matplot\CMakeFiles\matplot.dir\axes_objects
+  TARGET_COMPILE_PDB = matplotplusplus\source\matplot\CMakeFiles\matplot.dir\matplot.pdb
+  TARGET_PDB = matplotplusplus\source\matplot\libmatplot.pdb
+
+build matplotplusplus/source/matplot/CMakeFiles/matplot.dir/axes_objects/network.cpp.obj: CXX_COMPILER__matplot_unscanned_Debug C$:/Users/paddy/CLionProjects/3530project3/matplotplusplus/source/matplot/axes_objects/network.cpp || cmake_object_order_depends_target_matplot
+  DEFINES = -DMATPLOT_BUILD_HIGH_RESOLUTION_WORLD_MAP -DNOMINMAX -Dcimg_display=2
+  DEP_FILE = matplotplusplus\source\matplot\CMakeFiles\matplot.dir\axes_objects\network.cpp.obj.d
+  FLAGS = -g -std=gnu++17 -fdiagnostics-color=always -Wall -Wextra -pedantic -Werror
+  INCLUDES = -IC:/Users/paddy/CLionProjects/3530project3/matplotplusplus/source -IC:/Users/paddy/CLionProjects/3530project3/cmake-build-debug/matplotplusplus/source/matplot -isystem C:/Users/paddy/CLionProjects/3530project3/matplotplusplus/source/3rd_party/cimg -isystem C:/Users/paddy/CLionProjects/3530project3/matplotplusplus/source/3rd_party/nodesoup/include
+  OBJECT_DIR = matplotplusplus\source\matplot\CMakeFiles\matplot.dir
+  OBJECT_FILE_DIR = matplotplusplus\source\matplot\CMakeFiles\matplot.dir\axes_objects
+  TARGET_COMPILE_PDB = matplotplusplus\source\matplot\CMakeFiles\matplot.dir\matplot.pdb
+  TARGET_PDB = matplotplusplus\source\matplot\libmatplot.pdb
+
+build matplotplusplus/source/matplot/CMakeFiles/matplot.dir/axes_objects/parallel_lines.cpp.obj: CXX_COMPILER__matplot_unscanned_Debug C$:/Users/paddy/CLionProjects/3530project3/matplotplusplus/source/matplot/axes_objects/parallel_lines.cpp || cmake_object_order_depends_target_matplot
+  DEFINES = -DMATPLOT_BUILD_HIGH_RESOLUTION_WORLD_MAP -DNOMINMAX -Dcimg_display=2
+  DEP_FILE = matplotplusplus\source\matplot\CMakeFiles\matplot.dir\axes_objects\parallel_lines.cpp.obj.d
+  FLAGS = -g -std=gnu++17 -fdiagnostics-color=always -Wall -Wextra -pedantic -Werror
+  INCLUDES = -IC:/Users/paddy/CLionProjects/3530project3/matplotplusplus/source -IC:/Users/paddy/CLionProjects/3530project3/cmake-build-debug/matplotplusplus/source/matplot -isystem C:/Users/paddy/CLionProjects/3530project3/matplotplusplus/source/3rd_party/cimg -isystem C:/Users/paddy/CLionProjects/3530project3/matplotplusplus/source/3rd_party/nodesoup/include
+  OBJECT_DIR = matplotplusplus\source\matplot\CMakeFiles\matplot.dir
+  OBJECT_FILE_DIR = matplotplusplus\source\matplot\CMakeFiles\matplot.dir\axes_objects
+  TARGET_COMPILE_PDB = matplotplusplus\source\matplot\CMakeFiles\matplot.dir\matplot.pdb
+  TARGET_PDB = matplotplusplus\source\matplot\libmatplot.pdb
+
+build matplotplusplus/source/matplot/CMakeFiles/matplot.dir/axes_objects/stair.cpp.obj: CXX_COMPILER__matplot_unscanned_Debug C$:/Users/paddy/CLionProjects/3530project3/matplotplusplus/source/matplot/axes_objects/stair.cpp || cmake_object_order_depends_target_matplot
+  DEFINES = -DMATPLOT_BUILD_HIGH_RESOLUTION_WORLD_MAP -DNOMINMAX -Dcimg_display=2
+  DEP_FILE = matplotplusplus\source\matplot\CMakeFiles\matplot.dir\axes_objects\stair.cpp.obj.d
+  FLAGS = -g -std=gnu++17 -fdiagnostics-color=always -Wall -Wextra -pedantic -Werror
+  INCLUDES = -IC:/Users/paddy/CLionProjects/3530project3/matplotplusplus/source -IC:/Users/paddy/CLionProjects/3530project3/cmake-build-debug/matplotplusplus/source/matplot -isystem C:/Users/paddy/CLionProjects/3530project3/matplotplusplus/source/3rd_party/cimg -isystem C:/Users/paddy/CLionProjects/3530project3/matplotplusplus/source/3rd_party/nodesoup/include
+  OBJECT_DIR = matplotplusplus\source\matplot\CMakeFiles\matplot.dir
+  OBJECT_FILE_DIR = matplotplusplus\source\matplot\CMakeFiles\matplot.dir\axes_objects
+  TARGET_COMPILE_PDB = matplotplusplus\source\matplot\CMakeFiles\matplot.dir\matplot.pdb
+  TARGET_PDB = matplotplusplus\source\matplot\libmatplot.pdb
+
+build matplotplusplus/source/matplot/CMakeFiles/matplot.dir/axes_objects/string_function.cpp.obj: CXX_COMPILER__matplot_unscanned_Debug C$:/Users/paddy/CLionProjects/3530project3/matplotplusplus/source/matplot/axes_objects/string_function.cpp || cmake_object_order_depends_target_matplot
+  DEFINES = -DMATPLOT_BUILD_HIGH_RESOLUTION_WORLD_MAP -DNOMINMAX -Dcimg_display=2
+  DEP_FILE = matplotplusplus\source\matplot\CMakeFiles\matplot.dir\axes_objects\string_function.cpp.obj.d
+  FLAGS = -g -std=gnu++17 -fdiagnostics-color=always -Wall -Wextra -pedantic -Werror
+  INCLUDES = -IC:/Users/paddy/CLionProjects/3530project3/matplotplusplus/source -IC:/Users/paddy/CLionProjects/3530project3/cmake-build-debug/matplotplusplus/source/matplot -isystem C:/Users/paddy/CLionProjects/3530project3/matplotplusplus/source/3rd_party/cimg -isystem C:/Users/paddy/CLionProjects/3530project3/matplotplusplus/source/3rd_party/nodesoup/include
+  OBJECT_DIR = matplotplusplus\source\matplot\CMakeFiles\matplot.dir
+  OBJECT_FILE_DIR = matplotplusplus\source\matplot\CMakeFiles\matplot.dir\axes_objects
+  TARGET_COMPILE_PDB = matplotplusplus\source\matplot\CMakeFiles\matplot.dir\matplot.pdb
+  TARGET_PDB = matplotplusplus\source\matplot\libmatplot.pdb
+
+build matplotplusplus/source/matplot/CMakeFiles/matplot.dir/axes_objects/surface.cpp.obj: CXX_COMPILER__matplot_unscanned_Debug C$:/Users/paddy/CLionProjects/3530project3/matplotplusplus/source/matplot/axes_objects/surface.cpp || cmake_object_order_depends_target_matplot
+  DEFINES = -DMATPLOT_BUILD_HIGH_RESOLUTION_WORLD_MAP -DNOMINMAX -Dcimg_display=2
+  DEP_FILE = matplotplusplus\source\matplot\CMakeFiles\matplot.dir\axes_objects\surface.cpp.obj.d
+  FLAGS = -g -std=gnu++17 -fdiagnostics-color=always -Wall -Wextra -pedantic -Werror
+  INCLUDES = -IC:/Users/paddy/CLionProjects/3530project3/matplotplusplus/source -IC:/Users/paddy/CLionProjects/3530project3/cmake-build-debug/matplotplusplus/source/matplot -isystem C:/Users/paddy/CLionProjects/3530project3/matplotplusplus/source/3rd_party/cimg -isystem C:/Users/paddy/CLionProjects/3530project3/matplotplusplus/source/3rd_party/nodesoup/include
+  OBJECT_DIR = matplotplusplus\source\matplot\CMakeFiles\matplot.dir
+  OBJECT_FILE_DIR = matplotplusplus\source\matplot\CMakeFiles\matplot.dir\axes_objects
+  TARGET_COMPILE_PDB = matplotplusplus\source\matplot\CMakeFiles\matplot.dir\matplot.pdb
+  TARGET_PDB = matplotplusplus\source\matplot\libmatplot.pdb
+
+build matplotplusplus/source/matplot/CMakeFiles/matplot.dir/axes_objects/vectors.cpp.obj: CXX_COMPILER__matplot_unscanned_Debug C$:/Users/paddy/CLionProjects/3530project3/matplotplusplus/source/matplot/axes_objects/vectors.cpp || cmake_object_order_depends_target_matplot
+  DEFINES = -DMATPLOT_BUILD_HIGH_RESOLUTION_WORLD_MAP -DNOMINMAX -Dcimg_display=2
+  DEP_FILE = matplotplusplus\source\matplot\CMakeFiles\matplot.dir\axes_objects\vectors.cpp.obj.d
+  FLAGS = -g -std=gnu++17 -fdiagnostics-color=always -Wall -Wextra -pedantic -Werror
+  INCLUDES = -IC:/Users/paddy/CLionProjects/3530project3/matplotplusplus/source -IC:/Users/paddy/CLionProjects/3530project3/cmake-build-debug/matplotplusplus/source/matplot -isystem C:/Users/paddy/CLionProjects/3530project3/matplotplusplus/source/3rd_party/cimg -isystem C:/Users/paddy/CLionProjects/3530project3/matplotplusplus/source/3rd_party/nodesoup/include
+  OBJECT_DIR = matplotplusplus\source\matplot\CMakeFiles\matplot.dir
+  OBJECT_FILE_DIR = matplotplusplus\source\matplot\CMakeFiles\matplot.dir\axes_objects
+  TARGET_COMPILE_PDB = matplotplusplus\source\matplot\CMakeFiles\matplot.dir\matplot.pdb
+  TARGET_PDB = matplotplusplus\source\matplot\libmatplot.pdb
+
+build matplotplusplus/source/matplot/CMakeFiles/matplot.dir/freestanding/axes_functions.cpp.obj: CXX_COMPILER__matplot_unscanned_Debug C$:/Users/paddy/CLionProjects/3530project3/matplotplusplus/source/matplot/freestanding/axes_functions.cpp || cmake_object_order_depends_target_matplot
+  DEFINES = -DMATPLOT_BUILD_HIGH_RESOLUTION_WORLD_MAP -DNOMINMAX -Dcimg_display=2
+  DEP_FILE = matplotplusplus\source\matplot\CMakeFiles\matplot.dir\freestanding\axes_functions.cpp.obj.d
+  FLAGS = -g -std=gnu++17 -fdiagnostics-color=always -Wall -Wextra -pedantic -Werror
+  INCLUDES = -IC:/Users/paddy/CLionProjects/3530project3/matplotplusplus/source -IC:/Users/paddy/CLionProjects/3530project3/cmake-build-debug/matplotplusplus/source/matplot -isystem C:/Users/paddy/CLionProjects/3530project3/matplotplusplus/source/3rd_party/cimg -isystem C:/Users/paddy/CLionProjects/3530project3/matplotplusplus/source/3rd_party/nodesoup/include
+  OBJECT_DIR = matplotplusplus\source\matplot\CMakeFiles\matplot.dir
+  OBJECT_FILE_DIR = matplotplusplus\source\matplot\CMakeFiles\matplot.dir\freestanding
+  TARGET_COMPILE_PDB = matplotplusplus\source\matplot\CMakeFiles\matplot.dir\matplot.pdb
+  TARGET_PDB = matplotplusplus\source\matplot\libmatplot.pdb
+
+build matplotplusplus/source/matplot/CMakeFiles/matplot.dir/freestanding/histcounts.cpp.obj: CXX_COMPILER__matplot_unscanned_Debug C$:/Users/paddy/CLionProjects/3530project3/matplotplusplus/source/matplot/freestanding/histcounts.cpp || cmake_object_order_depends_target_matplot
+  DEFINES = -DMATPLOT_BUILD_HIGH_RESOLUTION_WORLD_MAP -DNOMINMAX -Dcimg_display=2
+  DEP_FILE = matplotplusplus\source\matplot\CMakeFiles\matplot.dir\freestanding\histcounts.cpp.obj.d
+  FLAGS = -g -std=gnu++17 -fdiagnostics-color=always -Wall -Wextra -pedantic -Werror
+  INCLUDES = -IC:/Users/paddy/CLionProjects/3530project3/matplotplusplus/source -IC:/Users/paddy/CLionProjects/3530project3/cmake-build-debug/matplotplusplus/source/matplot -isystem C:/Users/paddy/CLionProjects/3530project3/matplotplusplus/source/3rd_party/cimg -isystem C:/Users/paddy/CLionProjects/3530project3/matplotplusplus/source/3rd_party/nodesoup/include
+  OBJECT_DIR = matplotplusplus\source\matplot\CMakeFiles\matplot.dir
+  OBJECT_FILE_DIR = matplotplusplus\source\matplot\CMakeFiles\matplot.dir\freestanding
+  TARGET_COMPILE_PDB = matplotplusplus\source\matplot\CMakeFiles\matplot.dir\matplot.pdb
+  TARGET_PDB = matplotplusplus\source\matplot\libmatplot.pdb
+
+
+# =============================================================================
+# Link build statements for STATIC_LIBRARY target matplot
+
+
+#############################################
+# Link the static library matplotplusplus\source\matplot\libmatplot.a
+
+build matplotplusplus/source/matplot/libmatplot.a: CXX_STATIC_LIBRARY_LINKER__matplot_Debug matplotplusplus/source/matplot/CMakeFiles/matplot.dir/backend/backend_interface.cpp.obj matplotplusplus/source/matplot/CMakeFiles/matplot.dir/backend/gnuplot.cpp.obj matplotplusplus/source/matplot/CMakeFiles/matplot.dir/backend/backend_registry.cpp.obj matplotplusplus/source/matplot/CMakeFiles/matplot.dir/core/axes_type.cpp.obj matplotplusplus/source/matplot/CMakeFiles/matplot.dir/core/axes_object.cpp.obj matplotplusplus/source/matplot/CMakeFiles/matplot.dir/core/axis_type.cpp.obj matplotplusplus/source/matplot/CMakeFiles/matplot.dir/core/figure_type.cpp.obj matplotplusplus/source/matplot/CMakeFiles/matplot.dir/core/figure_registry.cpp.obj matplotplusplus/source/matplot/CMakeFiles/matplot.dir/core/legend.cpp.obj matplotplusplus/source/matplot/CMakeFiles/matplot.dir/core/line_spec.cpp.obj matplotplusplus/source/matplot/CMakeFiles/matplot.dir/util/colors.cpp.obj matplotplusplus/source/matplot/CMakeFiles/matplot.dir/util/common.cpp.obj matplotplusplus/source/matplot/CMakeFiles/matplot.dir/util/contourc.cpp.obj matplotplusplus/source/matplot/CMakeFiles/matplot.dir/util/popen.cpp.obj matplotplusplus/source/matplot/CMakeFiles/matplot.dir/util/world_cities.cpp.obj matplotplusplus/source/matplot/CMakeFiles/matplot.dir/util/world_map_10m.cpp.obj matplotplusplus/source/matplot/CMakeFiles/matplot.dir/util/world_map_50m.cpp.obj matplotplusplus/source/matplot/CMakeFiles/matplot.dir/util/world_map_110m.cpp.obj matplotplusplus/source/matplot/CMakeFiles/matplot.dir/axes_objects/bars.cpp.obj matplotplusplus/source/matplot/CMakeFiles/matplot.dir/axes_objects/box_chart.cpp.obj matplotplusplus/source/matplot/CMakeFiles/matplot.dir/axes_objects/circles.cpp.obj matplotplusplus/source/matplot/CMakeFiles/matplot.dir/axes_objects/contours.cpp.obj matplotplusplus/source/matplot/CMakeFiles/matplot.dir/axes_objects/error_bar.cpp.obj matplotplusplus/source/matplot/CMakeFiles/matplot.dir/axes_objects/filled_area.cpp.obj matplotplusplus/source/matplot/CMakeFiles/matplot.dir/axes_objects/function_line.cpp.obj matplotplusplus/source/matplot/CMakeFiles/matplot.dir/axes_objects/histogram.cpp.obj matplotplusplus/source/matplot/CMakeFiles/matplot.dir/axes_objects/labels.cpp.obj matplotplusplus/source/matplot/CMakeFiles/matplot.dir/axes_objects/line.cpp.obj matplotplusplus/source/matplot/CMakeFiles/matplot.dir/axes_objects/matrix.cpp.obj matplotplusplus/source/matplot/CMakeFiles/matplot.dir/axes_objects/network.cpp.obj matplotplusplus/source/matplot/CMakeFiles/matplot.dir/axes_objects/parallel_lines.cpp.obj matplotplusplus/source/matplot/CMakeFiles/matplot.dir/axes_objects/stair.cpp.obj matplotplusplus/source/matplot/CMakeFiles/matplot.dir/axes_objects/string_function.cpp.obj matplotplusplus/source/matplot/CMakeFiles/matplot.dir/axes_objects/surface.cpp.obj matplotplusplus/source/matplot/CMakeFiles/matplot.dir/axes_objects/vectors.cpp.obj matplotplusplus/source/matplot/CMakeFiles/matplot.dir/freestanding/axes_functions.cpp.obj matplotplusplus/source/matplot/CMakeFiles/matplot.dir/freestanding/histcounts.cpp.obj || matplotplusplus/source/3rd_party/libnodesoup.a
+  LANGUAGE_COMPILE_FLAGS = -g
+  OBJECT_DIR = matplotplusplus\source\matplot\CMakeFiles\matplot.dir
+  POST_BUILD = cd .
+  PRE_LINK = cd .
+  TARGET_COMPILE_PDB = matplotplusplus\source\matplot\CMakeFiles\matplot.dir\matplot.pdb
+  TARGET_FILE = matplotplusplus\source\matplot\libmatplot.a
+  TARGET_PDB = matplotplusplus\source\matplot\libmatplot.pdb
+
+
+#############################################
+# Utility command for edit_cache
+
+build matplotplusplus/source/matplot/CMakeFiles/edit_cache.util: CUSTOM_COMMAND
+  COMMAND = cmd.exe /C "cd /D C:\Users\paddy\CLionProjects\3530project3\cmake-build-debug\matplotplusplus\source\matplot && C:\Users\paddy\Downloads\CLion\bin\cmake\win\x64\bin\cmake.exe -E echo "No interactive CMake dialog available.""
+  DESC = No interactive CMake dialog available...
+  restat = 1
+
+build matplotplusplus/source/matplot/edit_cache: phony matplotplusplus/source/matplot/CMakeFiles/edit_cache.util
+
+
+#############################################
+# Utility command for rebuild_cache
+
+build matplotplusplus/source/matplot/CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
+  COMMAND = cmd.exe /C "cd /D C:\Users\paddy\CLionProjects\3530project3\cmake-build-debug\matplotplusplus\source\matplot && C:\Users\paddy\Downloads\CLion\bin\cmake\win\x64\bin\cmake.exe --regenerate-during-build -SC:\Users\paddy\CLionProjects\3530project3 -BC:\Users\paddy\CLionProjects\3530project3\cmake-build-debug"
+  DESC = Running CMake to regenerate build system...
+  pool = console
+  restat = 1
+
+build matplotplusplus/source/matplot/rebuild_cache: phony matplotplusplus/source/matplot/CMakeFiles/rebuild_cache.util
+
+
+#############################################
+# Utility command for list_install_components
+
+build matplotplusplus/source/matplot/list_install_components: phony
+
+
+#############################################
+# Utility command for install
+
+build matplotplusplus/source/matplot/CMakeFiles/install.util: CUSTOM_COMMAND matplotplusplus/source/matplot/all
+  COMMAND = cmd.exe /C "cd /D C:\Users\paddy\CLionProjects\3530project3\cmake-build-debug\matplotplusplus\source\matplot && C:\Users\paddy\Downloads\CLion\bin\cmake\win\x64\bin\cmake.exe -P cmake_install.cmake"
+  DESC = Install the project...
+  pool = console
+  restat = 1
+
+build matplotplusplus/source/matplot/install: phony matplotplusplus/source/matplot/CMakeFiles/install.util
+
+
+#############################################
+# Utility command for install/local
+
+build matplotplusplus/source/matplot/CMakeFiles/install/local.util: CUSTOM_COMMAND matplotplusplus/source/matplot/all
+  COMMAND = cmd.exe /C "cd /D C:\Users\paddy\CLionProjects\3530project3\cmake-build-debug\matplotplusplus\source\matplot && C:\Users\paddy\Downloads\CLion\bin\cmake\win\x64\bin\cmake.exe -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake"
+  DESC = Installing only the local directory...
+  pool = console
+  restat = 1
+
+build matplotplusplus/source/matplot/install/local: phony matplotplusplus/source/matplot/CMakeFiles/install/local.util
+
+
+#############################################
+# Utility command for install/strip
+
+build matplotplusplus/source/matplot/CMakeFiles/install/strip.util: CUSTOM_COMMAND matplotplusplus/source/matplot/all
+  COMMAND = cmd.exe /C "cd /D C:\Users\paddy\CLionProjects\3530project3\cmake-build-debug\matplotplusplus\source\matplot && C:\Users\paddy\Downloads\CLion\bin\cmake\win\x64\bin\cmake.exe -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake"
+  DESC = Installing the project stripped...
+  pool = console
+  restat = 1
+
+build matplotplusplus/source/matplot/install/strip: phony matplotplusplus/source/matplot/CMakeFiles/install/strip.util
+
 # =============================================================================
 # Target aliases.
 
 build 3530project3: phony 3530project3.exe
+
+build libmatplot.a: phony matplotplusplus/source/matplot/libmatplot.a
+
+build libnodesoup.a: phony matplotplusplus/source/3rd_party/libnodesoup.a
+
+build matplot: phony matplotplusplus/source/matplot/libmatplot.a
+
+build nodesoup: phony matplotplusplus/source/3rd_party/libnodesoup.a
 
 # =============================================================================
 # Folder targets.
@@ -109,7 +916,35 @@ build 3530project3: phony 3530project3.exe
 #############################################
 # Folder: C:/Users/paddy/CLionProjects/3530project3/cmake-build-debug
 
-build all: phony 3530project3.exe
+build all: phony 3530project3.exe matplotplusplus/all
+
+# =============================================================================
+
+#############################################
+# Folder: C:/Users/paddy/CLionProjects/3530project3/cmake-build-debug/matplotplusplus
+
+build matplotplusplus/all: phony matplotplusplus/source/all
+
+# =============================================================================
+
+#############################################
+# Folder: C:/Users/paddy/CLionProjects/3530project3/cmake-build-debug/matplotplusplus/source
+
+build matplotplusplus/source/all: phony matplotplusplus/source/3rd_party/all matplotplusplus/source/matplot/all
+
+# =============================================================================
+
+#############################################
+# Folder: C:/Users/paddy/CLionProjects/3530project3/cmake-build-debug/matplotplusplus/source/3rd_party
+
+build matplotplusplus/source/3rd_party/all: phony matplotplusplus/source/3rd_party/libnodesoup.a
+
+# =============================================================================
+
+#############################################
+# Folder: C:/Users/paddy/CLionProjects/3530project3/cmake-build-debug/matplotplusplus/source/matplot
+
+build matplotplusplus/source/matplot/all: phony matplotplusplus/source/matplot/libmatplot.a
 
 # =============================================================================
 # Built-in targets
@@ -118,14 +953,14 @@ build all: phony 3530project3.exe
 #############################################
 # Re-run CMake if any of its inputs changed.
 
-build build.ninja: RERUN_CMAKE | C$:/Users/paddy/CLionProjects/3530project3/CMakeLists.txt C$:/Users/paddy/Downloads/CLion/bin/cmake/win/x64/share/cmake-3.27/Modules/CMakeCInformation.cmake C$:/Users/paddy/Downloads/CLion/bin/cmake/win/x64/share/cmake-3.27/Modules/CMakeCXXInformation.cmake C$:/Users/paddy/Downloads/CLion/bin/cmake/win/x64/share/cmake-3.27/Modules/CMakeCommonLanguageInclude.cmake C$:/Users/paddy/Downloads/CLion/bin/cmake/win/x64/share/cmake-3.27/Modules/CMakeGenericSystem.cmake C$:/Users/paddy/Downloads/CLion/bin/cmake/win/x64/share/cmake-3.27/Modules/CMakeInitializeConfigs.cmake C$:/Users/paddy/Downloads/CLion/bin/cmake/win/x64/share/cmake-3.27/Modules/CMakeLanguageInformation.cmake C$:/Users/paddy/Downloads/CLion/bin/cmake/win/x64/share/cmake-3.27/Modules/CMakeRCInformation.cmake C$:/Users/paddy/Downloads/CLion/bin/cmake/win/x64/share/cmake-3.27/Modules/CMakeSystemSpecificInformation.cmake C$:/Users/paddy/Downloads/CLion/bin/cmake/win/x64/share/cmake-3.27/Modules/CMakeSystemSpecificInitialize.cmake C$:/Users/paddy/Downloads/CLion/bin/cmake/win/x64/share/cmake-3.27/Modules/Compiler/CMakeCommonCompilerMacros.cmake C$:/Users/paddy/Downloads/CLion/bin/cmake/win/x64/share/cmake-3.27/Modules/Compiler/GNU-C.cmake C$:/Users/paddy/Downloads/CLion/bin/cmake/win/x64/share/cmake-3.27/Modules/Compiler/GNU-CXX.cmake C$:/Users/paddy/Downloads/CLion/bin/cmake/win/x64/share/cmake-3.27/Modules/Compiler/GNU.cmake C$:/Users/paddy/Downloads/CLion/bin/cmake/win/x64/share/cmake-3.27/Modules/Platform/Windows-GNU-C-ABI.cmake C$:/Users/paddy/Downloads/CLion/bin/cmake/win/x64/share/cmake-3.27/Modules/Platform/Windows-GNU-C.cmake C$:/Users/paddy/Downloads/CLion/bin/cmake/win/x64/share/cmake-3.27/Modules/Platform/Windows-GNU-CXX-ABI.cmake C$:/Users/paddy/Downloads/CLion/bin/cmake/win/x64/share/cmake-3.27/Modules/Platform/Windows-GNU-CXX.cmake C$:/Users/paddy/Downloads/CLion/bin/cmake/win/x64/share/cmake-3.27/Modules/Platform/Windows-GNU.cmake C$:/Users/paddy/Downloads/CLion/bin/cmake/win/x64/share/cmake-3.27/Modules/Platform/Windows-Initialize.cmake C$:/Users/paddy/Downloads/CLion/bin/cmake/win/x64/share/cmake-3.27/Modules/Platform/Windows-windres.cmake C$:/Users/paddy/Downloads/CLion/bin/cmake/win/x64/share/cmake-3.27/Modules/Platform/Windows.cmake C$:/Users/paddy/Downloads/CLion/bin/cmake/win/x64/share/cmake-3.27/Modules/Platform/WindowsPaths.cmake CMakeCache.txt CMakeFiles/3.27.8/CMakeCCompiler.cmake CMakeFiles/3.27.8/CMakeCXXCompiler.cmake CMakeFiles/3.27.8/CMakeRCCompiler.cmake CMakeFiles/3.27.8/CMakeSystem.cmake
+build build.ninja: RERUN_CMAKE | C$:/Users/paddy/CLionProjects/3530project3/CMakeLists.txt C$:/Users/paddy/CLionProjects/3530project3/matplotplusplus/CMakeLists.txt C$:/Users/paddy/CLionProjects/3530project3/matplotplusplus/cmake/FindFFTW.cmake C$:/Users/paddy/CLionProjects/3530project3/matplotplusplus/cmake/FindOpenCV.cmake C$:/Users/paddy/CLionProjects/3530project3/matplotplusplus/cmake/functions.cmake C$:/Users/paddy/CLionProjects/3530project3/matplotplusplus/cmake/functions/ensure_build_type.cmake C$:/Users/paddy/CLionProjects/3530project3/matplotplusplus/cmake/functions/link_external_libraries.cmake C$:/Users/paddy/CLionProjects/3530project3/matplotplusplus/cmake/functions/project_flags.cmake C$:/Users/paddy/CLionProjects/3530project3/matplotplusplus/cmake/functions/sanitizers.cmake C$:/Users/paddy/CLionProjects/3530project3/matplotplusplus/cmake/functions/target_options.cmake C$:/Users/paddy/CLionProjects/3530project3/matplotplusplus/source/3rd_party/CMakeLists.txt C$:/Users/paddy/CLionProjects/3530project3/matplotplusplus/source/CMakeLists.txt C$:/Users/paddy/CLionProjects/3530project3/matplotplusplus/source/matplot/CMakeLists.txt C$:/Users/paddy/Downloads/CLion/bin/cmake/win/x64/share/cmake-3.27/Modules/CMakeCCompiler.cmake.in C$:/Users/paddy/Downloads/CLion/bin/cmake/win/x64/share/cmake-3.27/Modules/CMakeCCompilerABI.c C$:/Users/paddy/Downloads/CLion/bin/cmake/win/x64/share/cmake-3.27/Modules/CMakeCInformation.cmake C$:/Users/paddy/Downloads/CLion/bin/cmake/win/x64/share/cmake-3.27/Modules/CMakeCXXCompiler.cmake.in C$:/Users/paddy/Downloads/CLion/bin/cmake/win/x64/share/cmake-3.27/Modules/CMakeCXXCompilerABI.cpp C$:/Users/paddy/Downloads/CLion/bin/cmake/win/x64/share/cmake-3.27/Modules/CMakeCXXInformation.cmake C$:/Users/paddy/Downloads/CLion/bin/cmake/win/x64/share/cmake-3.27/Modules/CMakeCheckCompilerFlagCommonPatterns.cmake C$:/Users/paddy/Downloads/CLion/bin/cmake/win/x64/share/cmake-3.27/Modules/CMakeCommonLanguageInclude.cmake C$:/Users/paddy/Downloads/CLion/bin/cmake/win/x64/share/cmake-3.27/Modules/CMakeCompilerIdDetection.cmake C$:/Users/paddy/Downloads/CLion/bin/cmake/win/x64/share/cmake-3.27/Modules/CMakeDetermineCCompiler.cmake C$:/Users/paddy/Downloads/CLion/bin/cmake/win/x64/share/cmake-3.27/Modules/CMakeDetermineCXXCompiler.cmake C$:/Users/paddy/Downloads/CLion/bin/cmake/win/x64/share/cmake-3.27/Modules/CMakeDetermineCompileFeatures.cmake C$:/Users/paddy/Downloads/CLion/bin/cmake/win/x64/share/cmake-3.27/Modules/CMakeDetermineCompiler.cmake C$:/Users/paddy/Downloads/CLion/bin/cmake/win/x64/share/cmake-3.27/Modules/CMakeDetermineCompilerABI.cmake C$:/Users/paddy/Downloads/CLion/bin/cmake/win/x64/share/cmake-3.27/Modules/CMakeDetermineCompilerId.cmake C$:/Users/paddy/Downloads/CLion/bin/cmake/win/x64/share/cmake-3.27/Modules/CMakeDetermineRCCompiler.cmake C$:/Users/paddy/Downloads/CLion/bin/cmake/win/x64/share/cmake-3.27/Modules/CMakeDetermineSystem.cmake C$:/Users/paddy/Downloads/CLion/bin/cmake/win/x64/share/cmake-3.27/Modules/CMakeFindBinUtils.cmake C$:/Users/paddy/Downloads/CLion/bin/cmake/win/x64/share/cmake-3.27/Modules/CMakeGenericSystem.cmake C$:/Users/paddy/Downloads/CLion/bin/cmake/win/x64/share/cmake-3.27/Modules/CMakeInitializeConfigs.cmake C$:/Users/paddy/Downloads/CLion/bin/cmake/win/x64/share/cmake-3.27/Modules/CMakeLanguageInformation.cmake C$:/Users/paddy/Downloads/CLion/bin/cmake/win/x64/share/cmake-3.27/Modules/CMakePackageConfigHelpers.cmake C$:/Users/paddy/Downloads/CLion/bin/cmake/win/x64/share/cmake-3.27/Modules/CMakeParseImplicitIncludeInfo.cmake C$:/Users/paddy/Downloads/CLion/bin/cmake/win/x64/share/cmake-3.27/Modules/CMakeParseImplicitLinkInfo.cmake C$:/Users/paddy/Downloads/CLion/bin/cmake/win/x64/share/cmake-3.27/Modules/CMakeParseLibraryArchitecture.cmake C$:/Users/paddy/Downloads/CLion/bin/cmake/win/x64/share/cmake-3.27/Modules/CMakeRCCompiler.cmake.in C$:/Users/paddy/Downloads/CLion/bin/cmake/win/x64/share/cmake-3.27/Modules/CMakeRCInformation.cmake C$:/Users/paddy/Downloads/CLion/bin/cmake/win/x64/share/cmake-3.27/Modules/CMakeSystem.cmake.in C$:/Users/paddy/Downloads/CLion/bin/cmake/win/x64/share/cmake-3.27/Modules/CMakeSystemSpecificInformation.cmake C$:/Users/paddy/Downloads/CLion/bin/cmake/win/x64/share/cmake-3.27/Modules/CMakeSystemSpecificInitialize.cmake C$:/Users/paddy/Downloads/CLion/bin/cmake/win/x64/share/cmake-3.27/Modules/CMakeTestCCompiler.cmake C$:/Users/paddy/Downloads/CLion/bin/cmake/win/x64/share/cmake-3.27/Modules/CMakeTestCXXCompiler.cmake C$:/Users/paddy/Downloads/CLion/bin/cmake/win/x64/share/cmake-3.27/Modules/CMakeTestCompilerCommon.cmake C$:/Users/paddy/Downloads/CLion/bin/cmake/win/x64/share/cmake-3.27/Modules/CMakeTestRCCompiler.cmake C$:/Users/paddy/Downloads/CLion/bin/cmake/win/x64/share/cmake-3.27/Modules/CheckCCompilerFlag.cmake C$:/Users/paddy/Downloads/CLion/bin/cmake/win/x64/share/cmake-3.27/Modules/CheckCSourceCompiles.cmake C$:/Users/paddy/Downloads/CLion/bin/cmake/win/x64/share/cmake-3.27/Modules/CheckCXXCompilerFlag.cmake C$:/Users/paddy/Downloads/CLion/bin/cmake/win/x64/share/cmake-3.27/Modules/CheckCXXSourceCompiles.cmake C$:/Users/paddy/Downloads/CLion/bin/cmake/win/x64/share/cmake-3.27/Modules/CheckCompilerFlag.cmake C$:/Users/paddy/Downloads/CLion/bin/cmake/win/x64/share/cmake-3.27/Modules/CheckFunctionExists.cmake C$:/Users/paddy/Downloads/CLion/bin/cmake/win/x64/share/cmake-3.27/Modules/CheckIncludeFile.cmake C$:/Users/paddy/Downloads/CLion/bin/cmake/win/x64/share/cmake-3.27/Modules/CheckLibraryExists.cmake C$:/Users/paddy/Downloads/CLion/bin/cmake/win/x64/share/cmake-3.27/Modules/CheckSourceCompiles.cmake C$:/Users/paddy/Downloads/CLion/bin/cmake/win/x64/share/cmake-3.27/Modules/CheckSymbolExists.cmake C$:/Users/paddy/Downloads/CLion/bin/cmake/win/x64/share/cmake-3.27/Modules/Compiler/ADSP-DetermineCompiler.cmake C$:/Users/paddy/Downloads/CLion/bin/cmake/win/x64/share/cmake-3.27/Modules/Compiler/ARMCC-DetermineCompiler.cmake C$:/Users/paddy/Downloads/CLion/bin/cmake/win/x64/share/cmake-3.27/Modules/Compiler/ARMClang-DetermineCompiler.cmake C$:/Users/paddy/Downloads/CLion/bin/cmake/win/x64/share/cmake-3.27/Modules/Compiler/AppleClang-DetermineCompiler.cmake C$:/Users/paddy/Downloads/CLion/bin/cmake/win/x64/share/cmake-3.27/Modules/Compiler/Borland-DetermineCompiler.cmake C$:/Users/paddy/Downloads/CLion/bin/cmake/win/x64/share/cmake-3.27/Modules/Compiler/Bruce-C-DetermineCompiler.cmake C$:/Users/paddy/Downloads/CLion/bin/cmake/win/x64/share/cmake-3.27/Modules/Compiler/CMakeCommonCompilerMacros.cmake C$:/Users/paddy/Downloads/CLion/bin/cmake/win/x64/share/cmake-3.27/Modules/Compiler/Clang-DetermineCompiler.cmake C$:/Users/paddy/Downloads/CLion/bin/cmake/win/x64/share/cmake-3.27/Modules/Compiler/Clang-DetermineCompilerInternal.cmake C$:/Users/paddy/Downloads/CLion/bin/cmake/win/x64/share/cmake-3.27/Modules/Compiler/Comeau-CXX-DetermineCompiler.cmake C$:/Users/paddy/Downloads/CLion/bin/cmake/win/x64/share/cmake-3.27/Modules/Compiler/Compaq-C-DetermineCompiler.cmake C$:/Users/paddy/Downloads/CLion/bin/cmake/win/x64/share/cmake-3.27/Modules/Compiler/Compaq-CXX-DetermineCompiler.cmake C$:/Users/paddy/Downloads/CLion/bin/cmake/win/x64/share/cmake-3.27/Modules/Compiler/Cray-DetermineCompiler.cmake C$:/Users/paddy/Downloads/CLion/bin/cmake/win/x64/share/cmake-3.27/Modules/Compiler/Embarcadero-DetermineCompiler.cmake C$:/Users/paddy/Downloads/CLion/bin/cmake/win/x64/share/cmake-3.27/Modules/Compiler/Fujitsu-DetermineCompiler.cmake C$:/Users/paddy/Downloads/CLion/bin/cmake/win/x64/share/cmake-3.27/Modules/Compiler/FujitsuClang-DetermineCompiler.cmake C$:/Users/paddy/Downloads/CLion/bin/cmake/win/x64/share/cmake-3.27/Modules/Compiler/GHS-DetermineCompiler.cmake C$:/Users/paddy/Downloads/CLion/bin/cmake/win/x64/share/cmake-3.27/Modules/Compiler/GNU-C-DetermineCompiler.cmake C$:/Users/paddy/Downloads/CLion/bin/cmake/win/x64/share/cmake-3.27/Modules/Compiler/GNU-C.cmake C$:/Users/paddy/Downloads/CLion/bin/cmake/win/x64/share/cmake-3.27/Modules/Compiler/GNU-CXX-DetermineCompiler.cmake C$:/Users/paddy/Downloads/CLion/bin/cmake/win/x64/share/cmake-3.27/Modules/Compiler/GNU-CXX.cmake C$:/Users/paddy/Downloads/CLion/bin/cmake/win/x64/share/cmake-3.27/Modules/Compiler/GNU-FindBinUtils.cmake C$:/Users/paddy/Downloads/CLion/bin/cmake/win/x64/share/cmake-3.27/Modules/Compiler/GNU.cmake C$:/Users/paddy/Downloads/CLion/bin/cmake/win/x64/share/cmake-3.27/Modules/Compiler/HP-C-DetermineCompiler.cmake C$:/Users/paddy/Downloads/CLion/bin/cmake/win/x64/share/cmake-3.27/Modules/Compiler/HP-CXX-DetermineCompiler.cmake C$:/Users/paddy/Downloads/CLion/bin/cmake/win/x64/share/cmake-3.27/Modules/Compiler/IAR-DetermineCompiler.cmake C$:/Users/paddy/Downloads/CLion/bin/cmake/win/x64/share/cmake-3.27/Modules/Compiler/IBMCPP-C-DetermineVersionInternal.cmake C$:/Users/paddy/Downloads/CLion/bin/cmake/win/x64/share/cmake-3.27/Modules/Compiler/IBMCPP-CXX-DetermineVersionInternal.cmake C$:/Users/paddy/Downloads/CLion/bin/cmake/win/x64/share/cmake-3.27/Modules/Compiler/IBMClang-C-DetermineCompiler.cmake C$:/Users/paddy/Downloads/CLion/bin/cmake/win/x64/share/cmake-3.27/Modules/Compiler/IBMClang-CXX-DetermineCompiler.cmake C$:/Users/paddy/Downloads/CLion/bin/cmake/win/x64/share/cmake-3.27/Modules/Compiler/Intel-DetermineCompiler.cmake C$:/Users/paddy/Downloads/CLion/bin/cmake/win/x64/share/cmake-3.27/Modules/Compiler/IntelLLVM-DetermineCompiler.cmake C$:/Users/paddy/Downloads/CLion/bin/cmake/win/x64/share/cmake-3.27/Modules/Compiler/LCC-C-DetermineCompiler.cmake C$:/Users/paddy/Downloads/CLion/bin/cmake/win/x64/share/cmake-3.27/Modules/Compiler/LCC-CXX-DetermineCompiler.cmake C$:/Users/paddy/Downloads/CLion/bin/cmake/win/x64/share/cmake-3.27/Modules/Compiler/MSVC-DetermineCompiler.cmake C$:/Users/paddy/Downloads/CLion/bin/cmake/win/x64/share/cmake-3.27/Modules/Compiler/NVHPC-DetermineCompiler.cmake C$:/Users/paddy/Downloads/CLion/bin/cmake/win/x64/share/cmake-3.27/Modules/Compiler/NVIDIA-DetermineCompiler.cmake C$:/Users/paddy/Downloads/CLion/bin/cmake/win/x64/share/cmake-3.27/Modules/Compiler/OpenWatcom-DetermineCompiler.cmake C$:/Users/paddy/Downloads/CLion/bin/cmake/win/x64/share/cmake-3.27/Modules/Compiler/PGI-DetermineCompiler.cmake C$:/Users/paddy/Downloads/CLion/bin/cmake/win/x64/share/cmake-3.27/Modules/Compiler/PathScale-DetermineCompiler.cmake C$:/Users/paddy/Downloads/CLion/bin/cmake/win/x64/share/cmake-3.27/Modules/Compiler/SCO-DetermineCompiler.cmake C$:/Users/paddy/Downloads/CLion/bin/cmake/win/x64/share/cmake-3.27/Modules/Compiler/SDCC-C-DetermineCompiler.cmake C$:/Users/paddy/Downloads/CLion/bin/cmake/win/x64/share/cmake-3.27/Modules/Compiler/SunPro-C-DetermineCompiler.cmake C$:/Users/paddy/Downloads/CLion/bin/cmake/win/x64/share/cmake-3.27/Modules/Compiler/SunPro-CXX-DetermineCompiler.cmake C$:/Users/paddy/Downloads/CLion/bin/cmake/win/x64/share/cmake-3.27/Modules/Compiler/TI-DetermineCompiler.cmake C$:/Users/paddy/Downloads/CLion/bin/cmake/win/x64/share/cmake-3.27/Modules/Compiler/Tasking-DetermineCompiler.cmake C$:/Users/paddy/Downloads/CLion/bin/cmake/win/x64/share/cmake-3.27/Modules/Compiler/TinyCC-C-DetermineCompiler.cmake C$:/Users/paddy/Downloads/CLion/bin/cmake/win/x64/share/cmake-3.27/Modules/Compiler/VisualAge-C-DetermineCompiler.cmake C$:/Users/paddy/Downloads/CLion/bin/cmake/win/x64/share/cmake-3.27/Modules/Compiler/VisualAge-CXX-DetermineCompiler.cmake C$:/Users/paddy/Downloads/CLion/bin/cmake/win/x64/share/cmake-3.27/Modules/Compiler/Watcom-DetermineCompiler.cmake C$:/Users/paddy/Downloads/CLion/bin/cmake/win/x64/share/cmake-3.27/Modules/Compiler/XL-C-DetermineCompiler.cmake C$:/Users/paddy/Downloads/CLion/bin/cmake/win/x64/share/cmake-3.27/Modules/Compiler/XL-CXX-DetermineCompiler.cmake C$:/Users/paddy/Downloads/CLion/bin/cmake/win/x64/share/cmake-3.27/Modules/Compiler/XLClang-C-DetermineCompiler.cmake C$:/Users/paddy/Downloads/CLion/bin/cmake/win/x64/share/cmake-3.27/Modules/Compiler/XLClang-CXX-DetermineCompiler.cmake C$:/Users/paddy/Downloads/CLion/bin/cmake/win/x64/share/cmake-3.27/Modules/Compiler/zOS-C-DetermineCompiler.cmake C$:/Users/paddy/Downloads/CLion/bin/cmake/win/x64/share/cmake-3.27/Modules/Compiler/zOS-CXX-DetermineCompiler.cmake C$:/Users/paddy/Downloads/CLion/bin/cmake/win/x64/share/cmake-3.27/Modules/ExternalProject/shared_internal_commands.cmake C$:/Users/paddy/Downloads/CLion/bin/cmake/win/x64/share/cmake-3.27/Modules/FetchContent.cmake C$:/Users/paddy/Downloads/CLion/bin/cmake/win/x64/share/cmake-3.27/Modules/FindBLAS.cmake C$:/Users/paddy/Downloads/CLion/bin/cmake/win/x64/share/cmake-3.27/Modules/FindJPEG.cmake C$:/Users/paddy/Downloads/CLion/bin/cmake/win/x64/share/cmake-3.27/Modules/FindLAPACK.cmake C$:/Users/paddy/Downloads/CLion/bin/cmake/win/x64/share/cmake-3.27/Modules/FindPackageHandleStandardArgs.cmake C$:/Users/paddy/Downloads/CLion/bin/cmake/win/x64/share/cmake-3.27/Modules/FindPackageMessage.cmake C$:/Users/paddy/Downloads/CLion/bin/cmake/win/x64/share/cmake-3.27/Modules/FindPkgConfig.cmake C$:/Users/paddy/Downloads/CLion/bin/cmake/win/x64/share/cmake-3.27/Modules/FindTIFF.cmake C$:/Users/paddy/Downloads/CLion/bin/cmake/win/x64/share/cmake-3.27/Modules/FindThreads.cmake C$:/Users/paddy/Downloads/CLion/bin/cmake/win/x64/share/cmake-3.27/Modules/FindZLIB.cmake C$:/Users/paddy/Downloads/CLion/bin/cmake/win/x64/share/cmake-3.27/Modules/GNUInstallDirs.cmake C$:/Users/paddy/Downloads/CLion/bin/cmake/win/x64/share/cmake-3.27/Modules/GenerateExportHeader.cmake C$:/Users/paddy/Downloads/CLion/bin/cmake/win/x64/share/cmake-3.27/Modules/Internal/CheckCompilerFlag.cmake C$:/Users/paddy/Downloads/CLion/bin/cmake/win/x64/share/cmake-3.27/Modules/Internal/CheckFlagCommonConfig.cmake C$:/Users/paddy/Downloads/CLion/bin/cmake/win/x64/share/cmake-3.27/Modules/Internal/CheckSourceCompiles.cmake C$:/Users/paddy/Downloads/CLion/bin/cmake/win/x64/share/cmake-3.27/Modules/Internal/FeatureTesting.cmake C$:/Users/paddy/Downloads/CLion/bin/cmake/win/x64/share/cmake-3.27/Modules/Platform/Windows-Determine-CXX.cmake C$:/Users/paddy/Downloads/CLion/bin/cmake/win/x64/share/cmake-3.27/Modules/Platform/Windows-GNU-C-ABI.cmake C$:/Users/paddy/Downloads/CLion/bin/cmake/win/x64/share/cmake-3.27/Modules/Platform/Windows-GNU-C.cmake C$:/Users/paddy/Downloads/CLion/bin/cmake/win/x64/share/cmake-3.27/Modules/Platform/Windows-GNU-CXX-ABI.cmake C$:/Users/paddy/Downloads/CLion/bin/cmake/win/x64/share/cmake-3.27/Modules/Platform/Windows-GNU-CXX.cmake C$:/Users/paddy/Downloads/CLion/bin/cmake/win/x64/share/cmake-3.27/Modules/Platform/Windows-GNU.cmake C$:/Users/paddy/Downloads/CLion/bin/cmake/win/x64/share/cmake-3.27/Modules/Platform/Windows-Initialize.cmake C$:/Users/paddy/Downloads/CLion/bin/cmake/win/x64/share/cmake-3.27/Modules/Platform/Windows-windres.cmake C$:/Users/paddy/Downloads/CLion/bin/cmake/win/x64/share/cmake-3.27/Modules/Platform/Windows.cmake C$:/Users/paddy/Downloads/CLion/bin/cmake/win/x64/share/cmake-3.27/Modules/Platform/WindowsPaths.cmake C$:/Users/paddy/Downloads/CLion/bin/cmake/win/x64/share/cmake-3.27/Modules/SelectLibraryConfigurations.cmake C$:/Users/paddy/Downloads/CLion/bin/cmake/win/x64/share/cmake-3.27/Modules/WriteBasicConfigVersionFile.cmake C$:/Users/paddy/Downloads/CLion/bin/cmake/win/x64/share/cmake-3.27/Modules/exportheader.cmake.in CMakeCache.txt CMakeFiles/3.27.8/CMakeCCompiler.cmake CMakeFiles/3.27.8/CMakeCXXCompiler.cmake CMakeFiles/3.27.8/CMakeRCCompiler.cmake CMakeFiles/3.27.8/CMakeSystem.cmake
   pool = console
 
 
 #############################################
 # A missing CMake input file is not an error.
 
-build C$:/Users/paddy/CLionProjects/3530project3/CMakeLists.txt C$:/Users/paddy/Downloads/CLion/bin/cmake/win/x64/share/cmake-3.27/Modules/CMakeCInformation.cmake C$:/Users/paddy/Downloads/CLion/bin/cmake/win/x64/share/cmake-3.27/Modules/CMakeCXXInformation.cmake C$:/Users/paddy/Downloads/CLion/bin/cmake/win/x64/share/cmake-3.27/Modules/CMakeCommonLanguageInclude.cmake C$:/Users/paddy/Downloads/CLion/bin/cmake/win/x64/share/cmake-3.27/Modules/CMakeGenericSystem.cmake C$:/Users/paddy/Downloads/CLion/bin/cmake/win/x64/share/cmake-3.27/Modules/CMakeInitializeConfigs.cmake C$:/Users/paddy/Downloads/CLion/bin/cmake/win/x64/share/cmake-3.27/Modules/CMakeLanguageInformation.cmake C$:/Users/paddy/Downloads/CLion/bin/cmake/win/x64/share/cmake-3.27/Modules/CMakeRCInformation.cmake C$:/Users/paddy/Downloads/CLion/bin/cmake/win/x64/share/cmake-3.27/Modules/CMakeSystemSpecificInformation.cmake C$:/Users/paddy/Downloads/CLion/bin/cmake/win/x64/share/cmake-3.27/Modules/CMakeSystemSpecificInitialize.cmake C$:/Users/paddy/Downloads/CLion/bin/cmake/win/x64/share/cmake-3.27/Modules/Compiler/CMakeCommonCompilerMacros.cmake C$:/Users/paddy/Downloads/CLion/bin/cmake/win/x64/share/cmake-3.27/Modules/Compiler/GNU-C.cmake C$:/Users/paddy/Downloads/CLion/bin/cmake/win/x64/share/cmake-3.27/Modules/Compiler/GNU-CXX.cmake C$:/Users/paddy/Downloads/CLion/bin/cmake/win/x64/share/cmake-3.27/Modules/Compiler/GNU.cmake C$:/Users/paddy/Downloads/CLion/bin/cmake/win/x64/share/cmake-3.27/Modules/Platform/Windows-GNU-C-ABI.cmake C$:/Users/paddy/Downloads/CLion/bin/cmake/win/x64/share/cmake-3.27/Modules/Platform/Windows-GNU-C.cmake C$:/Users/paddy/Downloads/CLion/bin/cmake/win/x64/share/cmake-3.27/Modules/Platform/Windows-GNU-CXX-ABI.cmake C$:/Users/paddy/Downloads/CLion/bin/cmake/win/x64/share/cmake-3.27/Modules/Platform/Windows-GNU-CXX.cmake C$:/Users/paddy/Downloads/CLion/bin/cmake/win/x64/share/cmake-3.27/Modules/Platform/Windows-GNU.cmake C$:/Users/paddy/Downloads/CLion/bin/cmake/win/x64/share/cmake-3.27/Modules/Platform/Windows-Initialize.cmake C$:/Users/paddy/Downloads/CLion/bin/cmake/win/x64/share/cmake-3.27/Modules/Platform/Windows-windres.cmake C$:/Users/paddy/Downloads/CLion/bin/cmake/win/x64/share/cmake-3.27/Modules/Platform/Windows.cmake C$:/Users/paddy/Downloads/CLion/bin/cmake/win/x64/share/cmake-3.27/Modules/Platform/WindowsPaths.cmake CMakeCache.txt CMakeFiles/3.27.8/CMakeCCompiler.cmake CMakeFiles/3.27.8/CMakeCXXCompiler.cmake CMakeFiles/3.27.8/CMakeRCCompiler.cmake CMakeFiles/3.27.8/CMakeSystem.cmake: phony
+build C$:/Users/paddy/CLionProjects/3530project3/CMakeLists.txt C$:/Users/paddy/CLionProjects/3530project3/matplotplusplus/CMakeLists.txt C$:/Users/paddy/CLionProjects/3530project3/matplotplusplus/cmake/FindFFTW.cmake C$:/Users/paddy/CLionProjects/3530project3/matplotplusplus/cmake/FindOpenCV.cmake C$:/Users/paddy/CLionProjects/3530project3/matplotplusplus/cmake/functions.cmake C$:/Users/paddy/CLionProjects/3530project3/matplotplusplus/cmake/functions/ensure_build_type.cmake C$:/Users/paddy/CLionProjects/3530project3/matplotplusplus/cmake/functions/link_external_libraries.cmake C$:/Users/paddy/CLionProjects/3530project3/matplotplusplus/cmake/functions/project_flags.cmake C$:/Users/paddy/CLionProjects/3530project3/matplotplusplus/cmake/functions/sanitizers.cmake C$:/Users/paddy/CLionProjects/3530project3/matplotplusplus/cmake/functions/target_options.cmake C$:/Users/paddy/CLionProjects/3530project3/matplotplusplus/source/3rd_party/CMakeLists.txt C$:/Users/paddy/CLionProjects/3530project3/matplotplusplus/source/CMakeLists.txt C$:/Users/paddy/CLionProjects/3530project3/matplotplusplus/source/matplot/CMakeLists.txt C$:/Users/paddy/Downloads/CLion/bin/cmake/win/x64/share/cmake-3.27/Modules/CMakeCCompiler.cmake.in C$:/Users/paddy/Downloads/CLion/bin/cmake/win/x64/share/cmake-3.27/Modules/CMakeCCompilerABI.c C$:/Users/paddy/Downloads/CLion/bin/cmake/win/x64/share/cmake-3.27/Modules/CMakeCInformation.cmake C$:/Users/paddy/Downloads/CLion/bin/cmake/win/x64/share/cmake-3.27/Modules/CMakeCXXCompiler.cmake.in C$:/Users/paddy/Downloads/CLion/bin/cmake/win/x64/share/cmake-3.27/Modules/CMakeCXXCompilerABI.cpp C$:/Users/paddy/Downloads/CLion/bin/cmake/win/x64/share/cmake-3.27/Modules/CMakeCXXInformation.cmake C$:/Users/paddy/Downloads/CLion/bin/cmake/win/x64/share/cmake-3.27/Modules/CMakeCheckCompilerFlagCommonPatterns.cmake C$:/Users/paddy/Downloads/CLion/bin/cmake/win/x64/share/cmake-3.27/Modules/CMakeCommonLanguageInclude.cmake C$:/Users/paddy/Downloads/CLion/bin/cmake/win/x64/share/cmake-3.27/Modules/CMakeCompilerIdDetection.cmake C$:/Users/paddy/Downloads/CLion/bin/cmake/win/x64/share/cmake-3.27/Modules/CMakeDetermineCCompiler.cmake C$:/Users/paddy/Downloads/CLion/bin/cmake/win/x64/share/cmake-3.27/Modules/CMakeDetermineCXXCompiler.cmake C$:/Users/paddy/Downloads/CLion/bin/cmake/win/x64/share/cmake-3.27/Modules/CMakeDetermineCompileFeatures.cmake C$:/Users/paddy/Downloads/CLion/bin/cmake/win/x64/share/cmake-3.27/Modules/CMakeDetermineCompiler.cmake C$:/Users/paddy/Downloads/CLion/bin/cmake/win/x64/share/cmake-3.27/Modules/CMakeDetermineCompilerABI.cmake C$:/Users/paddy/Downloads/CLion/bin/cmake/win/x64/share/cmake-3.27/Modules/CMakeDetermineCompilerId.cmake C$:/Users/paddy/Downloads/CLion/bin/cmake/win/x64/share/cmake-3.27/Modules/CMakeDetermineRCCompiler.cmake C$:/Users/paddy/Downloads/CLion/bin/cmake/win/x64/share/cmake-3.27/Modules/CMakeDetermineSystem.cmake C$:/Users/paddy/Downloads/CLion/bin/cmake/win/x64/share/cmake-3.27/Modules/CMakeFindBinUtils.cmake C$:/Users/paddy/Downloads/CLion/bin/cmake/win/x64/share/cmake-3.27/Modules/CMakeGenericSystem.cmake C$:/Users/paddy/Downloads/CLion/bin/cmake/win/x64/share/cmake-3.27/Modules/CMakeInitializeConfigs.cmake C$:/Users/paddy/Downloads/CLion/bin/cmake/win/x64/share/cmake-3.27/Modules/CMakeLanguageInformation.cmake C$:/Users/paddy/Downloads/CLion/bin/cmake/win/x64/share/cmake-3.27/Modules/CMakePackageConfigHelpers.cmake C$:/Users/paddy/Downloads/CLion/bin/cmake/win/x64/share/cmake-3.27/Modules/CMakeParseImplicitIncludeInfo.cmake C$:/Users/paddy/Downloads/CLion/bin/cmake/win/x64/share/cmake-3.27/Modules/CMakeParseImplicitLinkInfo.cmake C$:/Users/paddy/Downloads/CLion/bin/cmake/win/x64/share/cmake-3.27/Modules/CMakeParseLibraryArchitecture.cmake C$:/Users/paddy/Downloads/CLion/bin/cmake/win/x64/share/cmake-3.27/Modules/CMakeRCCompiler.cmake.in C$:/Users/paddy/Downloads/CLion/bin/cmake/win/x64/share/cmake-3.27/Modules/CMakeRCInformation.cmake C$:/Users/paddy/Downloads/CLion/bin/cmake/win/x64/share/cmake-3.27/Modules/CMakeSystem.cmake.in C$:/Users/paddy/Downloads/CLion/bin/cmake/win/x64/share/cmake-3.27/Modules/CMakeSystemSpecificInformation.cmake C$:/Users/paddy/Downloads/CLion/bin/cmake/win/x64/share/cmake-3.27/Modules/CMakeSystemSpecificInitialize.cmake C$:/Users/paddy/Downloads/CLion/bin/cmake/win/x64/share/cmake-3.27/Modules/CMakeTestCCompiler.cmake C$:/Users/paddy/Downloads/CLion/bin/cmake/win/x64/share/cmake-3.27/Modules/CMakeTestCXXCompiler.cmake C$:/Users/paddy/Downloads/CLion/bin/cmake/win/x64/share/cmake-3.27/Modules/CMakeTestCompilerCommon.cmake C$:/Users/paddy/Downloads/CLion/bin/cmake/win/x64/share/cmake-3.27/Modules/CMakeTestRCCompiler.cmake C$:/Users/paddy/Downloads/CLion/bin/cmake/win/x64/share/cmake-3.27/Modules/CheckCCompilerFlag.cmake C$:/Users/paddy/Downloads/CLion/bin/cmake/win/x64/share/cmake-3.27/Modules/CheckCSourceCompiles.cmake C$:/Users/paddy/Downloads/CLion/bin/cmake/win/x64/share/cmake-3.27/Modules/CheckCXXCompilerFlag.cmake C$:/Users/paddy/Downloads/CLion/bin/cmake/win/x64/share/cmake-3.27/Modules/CheckCXXSourceCompiles.cmake C$:/Users/paddy/Downloads/CLion/bin/cmake/win/x64/share/cmake-3.27/Modules/CheckCompilerFlag.cmake C$:/Users/paddy/Downloads/CLion/bin/cmake/win/x64/share/cmake-3.27/Modules/CheckFunctionExists.cmake C$:/Users/paddy/Downloads/CLion/bin/cmake/win/x64/share/cmake-3.27/Modules/CheckIncludeFile.cmake C$:/Users/paddy/Downloads/CLion/bin/cmake/win/x64/share/cmake-3.27/Modules/CheckLibraryExists.cmake C$:/Users/paddy/Downloads/CLion/bin/cmake/win/x64/share/cmake-3.27/Modules/CheckSourceCompiles.cmake C$:/Users/paddy/Downloads/CLion/bin/cmake/win/x64/share/cmake-3.27/Modules/CheckSymbolExists.cmake C$:/Users/paddy/Downloads/CLion/bin/cmake/win/x64/share/cmake-3.27/Modules/Compiler/ADSP-DetermineCompiler.cmake C$:/Users/paddy/Downloads/CLion/bin/cmake/win/x64/share/cmake-3.27/Modules/Compiler/ARMCC-DetermineCompiler.cmake C$:/Users/paddy/Downloads/CLion/bin/cmake/win/x64/share/cmake-3.27/Modules/Compiler/ARMClang-DetermineCompiler.cmake C$:/Users/paddy/Downloads/CLion/bin/cmake/win/x64/share/cmake-3.27/Modules/Compiler/AppleClang-DetermineCompiler.cmake C$:/Users/paddy/Downloads/CLion/bin/cmake/win/x64/share/cmake-3.27/Modules/Compiler/Borland-DetermineCompiler.cmake C$:/Users/paddy/Downloads/CLion/bin/cmake/win/x64/share/cmake-3.27/Modules/Compiler/Bruce-C-DetermineCompiler.cmake C$:/Users/paddy/Downloads/CLion/bin/cmake/win/x64/share/cmake-3.27/Modules/Compiler/CMakeCommonCompilerMacros.cmake C$:/Users/paddy/Downloads/CLion/bin/cmake/win/x64/share/cmake-3.27/Modules/Compiler/Clang-DetermineCompiler.cmake C$:/Users/paddy/Downloads/CLion/bin/cmake/win/x64/share/cmake-3.27/Modules/Compiler/Clang-DetermineCompilerInternal.cmake C$:/Users/paddy/Downloads/CLion/bin/cmake/win/x64/share/cmake-3.27/Modules/Compiler/Comeau-CXX-DetermineCompiler.cmake C$:/Users/paddy/Downloads/CLion/bin/cmake/win/x64/share/cmake-3.27/Modules/Compiler/Compaq-C-DetermineCompiler.cmake C$:/Users/paddy/Downloads/CLion/bin/cmake/win/x64/share/cmake-3.27/Modules/Compiler/Compaq-CXX-DetermineCompiler.cmake C$:/Users/paddy/Downloads/CLion/bin/cmake/win/x64/share/cmake-3.27/Modules/Compiler/Cray-DetermineCompiler.cmake C$:/Users/paddy/Downloads/CLion/bin/cmake/win/x64/share/cmake-3.27/Modules/Compiler/Embarcadero-DetermineCompiler.cmake C$:/Users/paddy/Downloads/CLion/bin/cmake/win/x64/share/cmake-3.27/Modules/Compiler/Fujitsu-DetermineCompiler.cmake C$:/Users/paddy/Downloads/CLion/bin/cmake/win/x64/share/cmake-3.27/Modules/Compiler/FujitsuClang-DetermineCompiler.cmake C$:/Users/paddy/Downloads/CLion/bin/cmake/win/x64/share/cmake-3.27/Modules/Compiler/GHS-DetermineCompiler.cmake C$:/Users/paddy/Downloads/CLion/bin/cmake/win/x64/share/cmake-3.27/Modules/Compiler/GNU-C-DetermineCompiler.cmake C$:/Users/paddy/Downloads/CLion/bin/cmake/win/x64/share/cmake-3.27/Modules/Compiler/GNU-C.cmake C$:/Users/paddy/Downloads/CLion/bin/cmake/win/x64/share/cmake-3.27/Modules/Compiler/GNU-CXX-DetermineCompiler.cmake C$:/Users/paddy/Downloads/CLion/bin/cmake/win/x64/share/cmake-3.27/Modules/Compiler/GNU-CXX.cmake C$:/Users/paddy/Downloads/CLion/bin/cmake/win/x64/share/cmake-3.27/Modules/Compiler/GNU-FindBinUtils.cmake C$:/Users/paddy/Downloads/CLion/bin/cmake/win/x64/share/cmake-3.27/Modules/Compiler/GNU.cmake C$:/Users/paddy/Downloads/CLion/bin/cmake/win/x64/share/cmake-3.27/Modules/Compiler/HP-C-DetermineCompiler.cmake C$:/Users/paddy/Downloads/CLion/bin/cmake/win/x64/share/cmake-3.27/Modules/Compiler/HP-CXX-DetermineCompiler.cmake C$:/Users/paddy/Downloads/CLion/bin/cmake/win/x64/share/cmake-3.27/Modules/Compiler/IAR-DetermineCompiler.cmake C$:/Users/paddy/Downloads/CLion/bin/cmake/win/x64/share/cmake-3.27/Modules/Compiler/IBMCPP-C-DetermineVersionInternal.cmake C$:/Users/paddy/Downloads/CLion/bin/cmake/win/x64/share/cmake-3.27/Modules/Compiler/IBMCPP-CXX-DetermineVersionInternal.cmake C$:/Users/paddy/Downloads/CLion/bin/cmake/win/x64/share/cmake-3.27/Modules/Compiler/IBMClang-C-DetermineCompiler.cmake C$:/Users/paddy/Downloads/CLion/bin/cmake/win/x64/share/cmake-3.27/Modules/Compiler/IBMClang-CXX-DetermineCompiler.cmake C$:/Users/paddy/Downloads/CLion/bin/cmake/win/x64/share/cmake-3.27/Modules/Compiler/Intel-DetermineCompiler.cmake C$:/Users/paddy/Downloads/CLion/bin/cmake/win/x64/share/cmake-3.27/Modules/Compiler/IntelLLVM-DetermineCompiler.cmake C$:/Users/paddy/Downloads/CLion/bin/cmake/win/x64/share/cmake-3.27/Modules/Compiler/LCC-C-DetermineCompiler.cmake C$:/Users/paddy/Downloads/CLion/bin/cmake/win/x64/share/cmake-3.27/Modules/Compiler/LCC-CXX-DetermineCompiler.cmake C$:/Users/paddy/Downloads/CLion/bin/cmake/win/x64/share/cmake-3.27/Modules/Compiler/MSVC-DetermineCompiler.cmake C$:/Users/paddy/Downloads/CLion/bin/cmake/win/x64/share/cmake-3.27/Modules/Compiler/NVHPC-DetermineCompiler.cmake C$:/Users/paddy/Downloads/CLion/bin/cmake/win/x64/share/cmake-3.27/Modules/Compiler/NVIDIA-DetermineCompiler.cmake C$:/Users/paddy/Downloads/CLion/bin/cmake/win/x64/share/cmake-3.27/Modules/Compiler/OpenWatcom-DetermineCompiler.cmake C$:/Users/paddy/Downloads/CLion/bin/cmake/win/x64/share/cmake-3.27/Modules/Compiler/PGI-DetermineCompiler.cmake C$:/Users/paddy/Downloads/CLion/bin/cmake/win/x64/share/cmake-3.27/Modules/Compiler/PathScale-DetermineCompiler.cmake C$:/Users/paddy/Downloads/CLion/bin/cmake/win/x64/share/cmake-3.27/Modules/Compiler/SCO-DetermineCompiler.cmake C$:/Users/paddy/Downloads/CLion/bin/cmake/win/x64/share/cmake-3.27/Modules/Compiler/SDCC-C-DetermineCompiler.cmake C$:/Users/paddy/Downloads/CLion/bin/cmake/win/x64/share/cmake-3.27/Modules/Compiler/SunPro-C-DetermineCompiler.cmake C$:/Users/paddy/Downloads/CLion/bin/cmake/win/x64/share/cmake-3.27/Modules/Compiler/SunPro-CXX-DetermineCompiler.cmake C$:/Users/paddy/Downloads/CLion/bin/cmake/win/x64/share/cmake-3.27/Modules/Compiler/TI-DetermineCompiler.cmake C$:/Users/paddy/Downloads/CLion/bin/cmake/win/x64/share/cmake-3.27/Modules/Compiler/Tasking-DetermineCompiler.cmake C$:/Users/paddy/Downloads/CLion/bin/cmake/win/x64/share/cmake-3.27/Modules/Compiler/TinyCC-C-DetermineCompiler.cmake C$:/Users/paddy/Downloads/CLion/bin/cmake/win/x64/share/cmake-3.27/Modules/Compiler/VisualAge-C-DetermineCompiler.cmake C$:/Users/paddy/Downloads/CLion/bin/cmake/win/x64/share/cmake-3.27/Modules/Compiler/VisualAge-CXX-DetermineCompiler.cmake C$:/Users/paddy/Downloads/CLion/bin/cmake/win/x64/share/cmake-3.27/Modules/Compiler/Watcom-DetermineCompiler.cmake C$:/Users/paddy/Downloads/CLion/bin/cmake/win/x64/share/cmake-3.27/Modules/Compiler/XL-C-DetermineCompiler.cmake C$:/Users/paddy/Downloads/CLion/bin/cmake/win/x64/share/cmake-3.27/Modules/Compiler/XL-CXX-DetermineCompiler.cmake C$:/Users/paddy/Downloads/CLion/bin/cmake/win/x64/share/cmake-3.27/Modules/Compiler/XLClang-C-DetermineCompiler.cmake C$:/Users/paddy/Downloads/CLion/bin/cmake/win/x64/share/cmake-3.27/Modules/Compiler/XLClang-CXX-DetermineCompiler.cmake C$:/Users/paddy/Downloads/CLion/bin/cmake/win/x64/share/cmake-3.27/Modules/Compiler/zOS-C-DetermineCompiler.cmake C$:/Users/paddy/Downloads/CLion/bin/cmake/win/x64/share/cmake-3.27/Modules/Compiler/zOS-CXX-DetermineCompiler.cmake C$:/Users/paddy/Downloads/CLion/bin/cmake/win/x64/share/cmake-3.27/Modules/ExternalProject/shared_internal_commands.cmake C$:/Users/paddy/Downloads/CLion/bin/cmake/win/x64/share/cmake-3.27/Modules/FetchContent.cmake C$:/Users/paddy/Downloads/CLion/bin/cmake/win/x64/share/cmake-3.27/Modules/FindBLAS.cmake C$:/Users/paddy/Downloads/CLion/bin/cmake/win/x64/share/cmake-3.27/Modules/FindJPEG.cmake C$:/Users/paddy/Downloads/CLion/bin/cmake/win/x64/share/cmake-3.27/Modules/FindLAPACK.cmake C$:/Users/paddy/Downloads/CLion/bin/cmake/win/x64/share/cmake-3.27/Modules/FindPackageHandleStandardArgs.cmake C$:/Users/paddy/Downloads/CLion/bin/cmake/win/x64/share/cmake-3.27/Modules/FindPackageMessage.cmake C$:/Users/paddy/Downloads/CLion/bin/cmake/win/x64/share/cmake-3.27/Modules/FindPkgConfig.cmake C$:/Users/paddy/Downloads/CLion/bin/cmake/win/x64/share/cmake-3.27/Modules/FindTIFF.cmake C$:/Users/paddy/Downloads/CLion/bin/cmake/win/x64/share/cmake-3.27/Modules/FindThreads.cmake C$:/Users/paddy/Downloads/CLion/bin/cmake/win/x64/share/cmake-3.27/Modules/FindZLIB.cmake C$:/Users/paddy/Downloads/CLion/bin/cmake/win/x64/share/cmake-3.27/Modules/GNUInstallDirs.cmake C$:/Users/paddy/Downloads/CLion/bin/cmake/win/x64/share/cmake-3.27/Modules/GenerateExportHeader.cmake C$:/Users/paddy/Downloads/CLion/bin/cmake/win/x64/share/cmake-3.27/Modules/Internal/CheckCompilerFlag.cmake C$:/Users/paddy/Downloads/CLion/bin/cmake/win/x64/share/cmake-3.27/Modules/Internal/CheckFlagCommonConfig.cmake C$:/Users/paddy/Downloads/CLion/bin/cmake/win/x64/share/cmake-3.27/Modules/Internal/CheckSourceCompiles.cmake C$:/Users/paddy/Downloads/CLion/bin/cmake/win/x64/share/cmake-3.27/Modules/Internal/FeatureTesting.cmake C$:/Users/paddy/Downloads/CLion/bin/cmake/win/x64/share/cmake-3.27/Modules/Platform/Windows-Determine-CXX.cmake C$:/Users/paddy/Downloads/CLion/bin/cmake/win/x64/share/cmake-3.27/Modules/Platform/Windows-GNU-C-ABI.cmake C$:/Users/paddy/Downloads/CLion/bin/cmake/win/x64/share/cmake-3.27/Modules/Platform/Windows-GNU-C.cmake C$:/Users/paddy/Downloads/CLion/bin/cmake/win/x64/share/cmake-3.27/Modules/Platform/Windows-GNU-CXX-ABI.cmake C$:/Users/paddy/Downloads/CLion/bin/cmake/win/x64/share/cmake-3.27/Modules/Platform/Windows-GNU-CXX.cmake C$:/Users/paddy/Downloads/CLion/bin/cmake/win/x64/share/cmake-3.27/Modules/Platform/Windows-GNU.cmake C$:/Users/paddy/Downloads/CLion/bin/cmake/win/x64/share/cmake-3.27/Modules/Platform/Windows-Initialize.cmake C$:/Users/paddy/Downloads/CLion/bin/cmake/win/x64/share/cmake-3.27/Modules/Platform/Windows-windres.cmake C$:/Users/paddy/Downloads/CLion/bin/cmake/win/x64/share/cmake-3.27/Modules/Platform/Windows.cmake C$:/Users/paddy/Downloads/CLion/bin/cmake/win/x64/share/cmake-3.27/Modules/Platform/WindowsPaths.cmake C$:/Users/paddy/Downloads/CLion/bin/cmake/win/x64/share/cmake-3.27/Modules/SelectLibraryConfigurations.cmake C$:/Users/paddy/Downloads/CLion/bin/cmake/win/x64/share/cmake-3.27/Modules/WriteBasicConfigVersionFile.cmake C$:/Users/paddy/Downloads/CLion/bin/cmake/win/x64/share/cmake-3.27/Modules/exportheader.cmake.in CMakeCache.txt CMakeFiles/3.27.8/CMakeCCompiler.cmake CMakeFiles/3.27.8/CMakeCXXCompiler.cmake CMakeFiles/3.27.8/CMakeRCCompiler.cmake CMakeFiles/3.27.8/CMakeSystem.cmake: phony
 
 
 #############################################

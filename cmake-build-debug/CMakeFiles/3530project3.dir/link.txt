@@ -1,3 +1,0 @@
-"C:\Program Files\JetBrains\CLion 2024.1.1\bin\cmake\win\x64\bin\cmake.exe" -E rm -f CMakeFiles\3530project3.dir/objects.a
-C:\PROGRA~1\JETBRA~1\CLION2~1.1\bin\mingw\bin\ar.exe qc CMakeFiles\3530project3.dir/objects.a @CMakeFiles\3530project3.dir\objects1.rsp
-C:\PROGRA~1\JETBRA~1\CLION2~1.1\bin\mingw\bin\G__~1.EXE -g -Wl,--whole-archive CMakeFiles\3530project3.dir/objects.a -Wl,--no-whole-archive -o 3530project3.exe -Wl,--out-implib,lib3530project3.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\3530project3.dir\linkLibs.rsp
