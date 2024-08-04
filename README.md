@@ -17,3 +17,6 @@ https://alandefreitas.github.io/matplotplusplus/integration/cmake/embed-as-subdi
 
 to install gnuplot, download the latest installation here: 
 https://sourceforge.net/projects/gnuplot/files/gnuplot/
+
+Note: BOTH matplot++ and gnuplot have to be installed to Windows and as an environment variable (linked to path)
+CMake has to be set as an environment variable.
