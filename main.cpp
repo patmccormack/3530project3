@@ -205,6 +205,7 @@ int main(){
                                  std::to_string(HousingData[i].location) + " \nRent: " +
                                  std::to_string(HousingData[i].rent) + " \n \n";
                 }
+
             }
         }
         if(input == "4"){
@@ -227,14 +228,12 @@ int main(){
                 data.flush();
                 data.close();
             }
-            using namespace matplot;
-
         }
         if(input == "0"){
             end = true;
         }
     }
-
+    using namespace matplot;
 
 
     return 0;
