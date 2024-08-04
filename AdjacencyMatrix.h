@@ -26,26 +26,32 @@ public:
         matrix[to][from] = weight; 
     }
 
-    //edge lookup: shortest edge between data points and user preferences
-    std::string findShortestEdge(int userNodeIndex, const vector<Estate>& estates) const {
-        double minEdgeWeight = numeric_limits<double>::max();
-        int minEdgeIndex = -1;
+    //edge lookup: longest edge between data points and user preferences
+    std::vector<std::string> findLongestEdge(int userNodeIndex, const vector<Estate>& estates) const {
+        double maxEdgeWeight = -1.0;
+        std::vector<int> maxEdgeIndices;
             for (size_t i = 0; i < numNodes; ++i) {
                 if (i != userNodeIndex && matrix[userNodeIndex][i] > 0.0) {
-                    if (matrix[userNodeIndex][i] < minEdgeWeight) {
-                        minEdgeWeight = matrix[userNodeIndex][i];
-                        minEdgeIndex = i;
-
-                    }
+                    if (matrix[userNodeIndex][i] > maxEdgeWeight) {
+                        maxEdgeWeight = matrix[userNodeIndex][i];
+                        maxEdgeIndices.clear();
+                        maxEdgeIndices.push_back(i);
+                        } else if (matrix[userNodeIndex][i] == maxEdgeWeight) {
+                            maxEdgeIndices.push_back(i);
+                        }
+                
                 }
             }
-        if (minEdgeIndex != -1) {
-            return estates[minEdgeIndex].name;
+        std::vector<std::string> results;
+        if (!maxEdgeIndices.empty()) {
+            for (int index : maxEdgeIndices) {
+            results.push_back(estates[index].name);
+            }
         } else {
-            return "No match found";
+            results.push_back("No match found");
         }
-    }
-    
+        return results;
+}
 
     std::vector<string> getNeighbors(int node, const vector<Estate>& estates) const {
         std::vector<string> neighbors;
