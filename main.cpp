@@ -18,7 +18,7 @@
 double calculateSimilarity(const Estate& estate1, const Estate& estate2) {
     double score = 0.0;
     // normalize categories to give equal weightage in similarity score
-    // Rent: estate - preferred/  preferrred
+    // Rent: estate - preferred/  average
     double rentDifference = abs(estate1.rent - estate2.rent) / ((estate1.rent + estate2.rent) / 2.0);;
     score += 1.0 - rentDifference;
     // bedrooms
@@ -30,8 +30,9 @@ double calculateSimilarity(const Estate& estate1, const Estate& estate2) {
     // location
     double locationDifference = abs(estate1.location - estate2.location) / ((estate1.location + estate2.location) / 2.0);
     score += 1.0 - locationDifference;
-    // similarity score, count create count instead of 4 for more preferences
 
+    
+    // similarity score, count create count instead of 4 for more preferences
     return score/4;
     // most similar has score closer to 1
 }
