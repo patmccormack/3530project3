@@ -2,6 +2,8 @@
 
 ### Instructions:
 
+Clion is recommended in ordered to run this program
+
 When the file is run, there are 4 options.
 
 For options 1, 3, and 4, you can just select those options
