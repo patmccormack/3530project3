@@ -8,8 +8,6 @@
 #include "AdjacencyList.h"
 #include "AdjacencyMatrix.h"
 #include <cmath>
-#include <chrono>
-#include <thread>
 #include <sstream>
 #include <string>
 #include <fstream>
@@ -36,9 +34,9 @@ double calculateSimilarity(const Estate& estate1, const Estate& estate2) {
     // most similar has score closer to 1
 }
 
-Estate getUserTestPreferences() {
-    return Estate("User Preferences", 1300, 3, 2, 5.0);
-}
+//Estate getUserTestPreferences() {
+//    return Estate("User Preferences", 1300, 3, 2, 5.0);
+//}
 
 std::vector<std::string> split(const std::string& s, char delimiter) {
     std::vector<std::string> tokens;
@@ -88,7 +86,7 @@ std::vector<Estate> TestData(int limit) {
 
 
 int main(){
-
+    //intial set up
     bool end = false;
     int size = 40;
     std::vector<Estate> HousingData = TestData(size);
@@ -113,25 +111,28 @@ int main(){
         std::string input;
         std::cout << "Menu \n 0. Exit \n 1. Display Houses in Text \n 2. Display Houses in Graph \n 3. Search House \n 4. Print Reference" << std::endl;
         std::cin >> input;
-
+        //Option 1: Prints out text
         if(input == "1"){
             std::cout << " 1. Adjacency Map \n 2. Matrix?" << endl;
             string option;
             std::cin >> option;
+            // Adjacency List
             if(option == "1"){
                 HouseList.printMap();
             }
+                // Adjacency Matrix
             else if(option == "2"){
                 HouseMatrix.printMatrix();
             }
         }
+        //Option 2: opens graph representation
         if(input == "2"){
             std::cout << " 1. Adjacency Map \n 2. Matrix?" << endl;
             string option;
             std::cin >> option;
             std::vector<std::pair<size_t, size_t>> graph;
             std::vector<double> weights;
-
+            // Adjacency List
             if(option == "1"){
                 unordered_map<int, vector<pair<int, double>>> list = HouseList.adjacencyList;
 
@@ -154,6 +155,7 @@ int main(){
 
                 matplot::show();
             }
+            //Adjacency Matrix
             if(option == "2"){
                 std::vector<double> x;
                 std::vector<double> y;
@@ -181,6 +183,7 @@ int main(){
                 matplot::show();
             }
         }
+        //Search Option
         if(input == "3"){
             HouseList.clearMap();
             HouseMatrix.clearMatrix();
@@ -205,9 +208,9 @@ int main(){
                                  std::to_string(HousingData[i].location) + " \nRent: " +
                                  std::to_string(HousingData[i].rent) + " \n \n";
                 }
-
             }
         }
+        //Print Reference
         if(input == "4"){
             std::cout << "Printing Data to File" << std::endl;
             std::ofstream data("Houses.txt");

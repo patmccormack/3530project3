@@ -1,37 +1,6 @@
 C:\Users\paddy\Downloads\CLion\bin\cmake\win\x64\bin\cmake.exe -DCMAKE_BUILD_TYPE=Debug -DCMAKE_MAKE_PROGRAM=C:/Users/paddy/Downloads/CLion/bin/ninja/win/x64/ninja.exe -G Ninja -S C:\Users\paddy\CLionProjects\3530project3 -B C:\Users\paddy\CLionProjects\3530project3\cmake-build-debug
--- The C compiler identification is GNU 13.1.0
--- The CXX compiler identification is GNU 13.1.0
--- Detecting C compiler ABI info
--- Detecting C compiler ABI info - done
--- Check for working C compiler: C:/mingw64/bin/gcc.exe - skipped
--- Detecting C compile features
--- Detecting C compile features - done
--- Detecting CXX compiler ABI info
--- Detecting CXX compiler ABI info - done
--- Check for working CXX compiler: C:/mingw64/bin/c++.exe - skipped
--- Detecting CXX compile features
--- Detecting CXX compile features - done
--- Could NOT find PkgConfig (missing: PKG_CONFIG_EXECUTABLE) 
--- Could NOT find JPEG (missing: JPEG_LIBRARY JPEG_INCLUDE_DIR) 
--- Could NOT find TIFF (missing: TIFF_LIBRARY TIFF_INCLUDE_DIR) 
--- Could NOT find ZLIB (missing: ZLIB_LIBRARY ZLIB_INCLUDE_DIR) 
--- Looking for sgemm_
--- Looking for sgemm_ - not found
--- Performing Test CMAKE_HAVE_LIBC_PTHREAD
--- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success
--- Found Threads: TRUE  
--- Could NOT find BLAS (missing: BLAS_LIBRARIES) 
--- Could NOT find LAPACK (missing: LAPACK_LIBRARIES) 
-    Reason given by package: LAPACK could not be found because dependency BLAS could not be found.
+CMake Error at CMakeLists.txt:1 (cmake_minimum_required):
+  CMake 3.30 or higher is required.  You are running version 3.27.8
 
--- Could NOT find BLAS (missing: BLAS_LIBRARIES) 
--- Could NOT find PkgConfig (missing: PKG_CONFIG_EXECUTABLE) 
--- Could NOT find FFTW (missing: FFTW_INCLUDE_DIRS) 
--- Performing Test COMPILER_HAS_DEPRECATED_ATTR
--- Performing Test COMPILER_HAS_DEPRECATED_ATTR - Success
-Setting matplotplusplus compiler options
--- Looking for __fbufsize
--- Looking for __fbufsize - not found
--- Configuring done (7.3s)
--- Generating done (0.1s)
--- Build files have been written to: C:/Users/paddy/CLionProjects/3530project3/cmake-build-debug
+
+-- Configuring incomplete, errors occurred!
